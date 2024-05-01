@@ -13,6 +13,24 @@
       за вашими новыми зелеными подопечными.
     </div>
   </article>
+
+  <section>
+    <div class="field">
+      <p class="control">
+        <input class="input" type="email" placeholder="Почта" />
+      </p>
+    </div>
+    <div class="field">
+      <p class="control">
+        <input class="input" type="password" placeholder="Пароль" />
+      </p>
+    </div>
+    <div class="field">
+      <p class="control">
+        <button class="button is-primary">Войти</button>
+      </p>
+    </div>
+  </section>
 </template>
 
 <style>
