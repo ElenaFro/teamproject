@@ -1,20 +1,12 @@
-import { ref } from 'vue';
+<template>
+    <div>
+        <h1>About Us</h1>
+        <p>This is the About Us section</p>
+    </div>
+</template>
 
+<script>
 export default {
-  setup() {
-    const products = ref([]);
-
-    // Fetch products data from an API
-    const fetchProducts = async () => {
-      // Make API call to fetch products
-      // Update products value
-    };
-
-    // Call fetchProducts function when the component is mounted
-    fetchProducts();
-
-    return {
-      products,
-    };
-  },
+    name: 'About',
 };
+</script>

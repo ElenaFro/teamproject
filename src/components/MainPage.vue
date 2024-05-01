@@ -2,30 +2,30 @@
   <div>
     <Header />
     <Navigation />
-    <About />
-    <ProductCatalog />
-    <News />
+    <!-- <About />
+    <Catalog /> -->
+    <!-- <News /> -->
     <Advertisement />
     <Footer />
   </div>
 </template>
 
 <script>
-import Header from './Header.vue';
-import Navigation from './Navigation.vue';
-import About from './About.vue';
-import ProductCatalog from './ProductCatalog.vue';
-import News from './News.vue';
-import Advertisement from './Advertisement.vue';
-import Footer from './Footer.vue';
+import Header from './components/Header.vue';
+import Navigation from './components/Navigation.vue';
+//   import About from './components/About.vue';
+//   import Catalog from './components/Catalog.vue';
+//   import News from './components/News.vue';
+import Advertisement from './components/Advertisement.vue';
+import Footer from './components/Footer.vue';
 
 export default {
   components: {
     Header,
     Navigation,
-    About,
-    ProductCatalog,
-    News,
+  //   About,
+  //   Catalog,
+  //   News,
     Advertisement,
     Footer,
   },
