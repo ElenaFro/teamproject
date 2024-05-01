@@ -1,17 +1,17 @@
 <template>
-  <article class="message">
+  <article class="message is-primary">
     <div class="message-header">
-      <p>Plants shop</p>
+      <p>Добро пожаловать в наш уютный магазин растений!</p>
       <button class="delete" aria-label="delete"></button>
     </div>
     <div class="message-body">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec
-      nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus
-      diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac
-      <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et
-      sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a
-      neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
+      Здесь вы найдете не только зелень для вашего дома или офиса, но и
+      вдохновение для создания живых оазисов вокруг себя. Мы стремимся
+      предложить вам <strong>самые красивые и здоровые растения</strong>. От
+      зеленых друзей для ваших оконных подоконников до величественных деревьев
+      для вашего сада — у нас есть что-то <em>для каждого любителя природы</em>.
+      Наша команда с удовольствием поможет вам сделать выбор и обеспечить уход
+      за вашими новыми зелеными подопечными.
     </div>
   </article>
 </template>
