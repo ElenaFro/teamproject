@@ -1,7 +1,7 @@
 <template>
   <article class="message is-primary">
     <div class="message-header">
-      <p>Добро пожаловать в наш уютный магазин растений!</p>
+      <p>Добро пожаловать в наш уютный магазин растений, друзья!</p>
     </div>
     <div class="message-body">
       Здесь вы найдете не только зелень для вашего дома или офиса, но и
