@@ -61,8 +61,18 @@ export default {
     submit() {
       if (this.email === "1t" && this.pass === "1t") {
         this.$router.replace("/main");
-      } else {
-        alert("Wrong email or password");
+      } else if (this.email === "") {
+        if (this.pass === "") {
+          alert("Введите почту и пароль");
+        } else {
+          alert("Введите почту");
+        }
+      } else if (this.pass === "") {
+        alert("Введите пароль");
+      } else if (this.email !== "1t" && this.email !== "") {
+        alert("Такой почты не существует");
+      } else if (this.pass !== "1t" && this.pass !== "") {
+        alert("Такой пароль не подходит");
       }
     },
   },
