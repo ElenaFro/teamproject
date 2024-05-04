@@ -1,10 +1,15 @@
 <template>
  <div class="main">
+  <section class="hero is-success ">
+  <div class="hero">
+    <p class="text has-text-light is-6  pl-6 ml-6">Доставка по России Почтой России</p>
+  </div>
+</section>
     <header class="container">
     <nav class="navbar px-5" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
           <a class="navbar-item" href="index.html">
-              <img src="/src/assets/logo_header.png" height="100">
+              <img src="/src/assets/logo_header.png">
           </a>
 
           <a role="button" class="navbar-burger has-text-success-dark" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -29,11 +34,7 @@
             Каталог
           </a>
 
-          <a class="navbar-item is-size-7">
-            Поиск
-          </a>
-
-          <div class="navbar-item has-dropdown is-hoverable mr-6">
+          <div class="navbar-item has-dropdown is-hoverable mr-6 ">
             <a class="navbar-link is-size-7 mr-6">
               Покупателям
             </a>
@@ -54,7 +55,12 @@
               </a>
             </div>
           </div>
-          <a class="navbar-item is-size-7 ml-6 has-text-danger">
+
+          <a class="navbar-item is-size-7 has-text-success-20 ml-6">
+            <svg-icon type="mdi" class="icon is-large" :path="path3"></svg-icon>
+          </a>
+
+          <a class="navbar-item is-size-7  has-text-danger">
             <svg-icon type="mdi" class="icon is-large" :path="path2"></svg-icon>
           </a>
           <a class="navbar-item is-size-7 has-text-success-20">
@@ -157,7 +163,7 @@
 
 <script>
 import SvgIcon from '@jamescoyle/vue-icon';
-import { mdiCart, mdiHeart  } from '@mdi/js';
+import { mdiCart, mdiHeart,  mdiMagnify } from '@mdi/js';
 
 export default {
   name: "my-component",
@@ -167,7 +173,8 @@ export default {
   data() {
     return {
        path1: mdiCart,
-       path2: mdiHeart
+       path2: mdiHeart,
+       path3: mdiMagnify
     }
   }
 }
