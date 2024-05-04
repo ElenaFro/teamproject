@@ -69,9 +69,9 @@ export default {
         }
       } else if (this.pass === "") {
         alert("Введите пароль");
-      } else if (this.email !== "1t" && this.email !== "") {
+      } else if (this.email !== "1t") {
         alert("Такой почты не существует");
-      } else if (this.pass !== "1t" && this.pass !== "") {
+      } else if (this.pass !== "1t") {
         alert("Такой пароль не подходит");
       }
     },
