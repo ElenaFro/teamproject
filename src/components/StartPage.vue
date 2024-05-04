@@ -1,9 +1,6 @@
 <template>
   <div class="wrapper">
     <section>
-      <h1>ЭТО СТАРТОВАЯ СТРАНИЦА + ФОРМА АВТОРИЗАЦИИ/РЕГИСТРАЦИИ</h1>
-    </section>
-    <section>
       <article class="message is-primary">
         <div class="message-header">
           <p>Добро пожаловать в наш уютный магазин растений!</p>
