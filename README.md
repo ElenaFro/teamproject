@@ -27,3 +27,11 @@ npm run dev
 ```sh
 npm run build
 ```
+### сохранить изменения в мастере
+git add .
+git commit -m "comments"
+git push -u origin master
+
+### слежка за db.json
+
+json-server --watch db.json

@@ -7,13 +7,13 @@ export default createStore({
     basket: []
   },
   mutations: {
-   
+
   },
   actions: {
- 
+
   },
   getters: {
-   
+
   },
   modules: {
   }

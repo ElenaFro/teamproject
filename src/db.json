@@ -1,0 +1,65 @@
+{
+    "plants": [
+        {
+            "image": "1.png",
+            "name": "Туя",
+            "price": 2100,
+            "vcode": "д1",
+            "availability": true,
+            "category1": "Деревья",
+            "category2": "Уличные растения",
+            "about": "60 см",
+            "care": "Полив: 1 раз в 2 недели, равнодушна к влажности воздуха. Освещение: рассеянный свет/полутень, восточное или западное окно - отлично"
+        },
+        {
+            "image": "2.png",
+            "name": "Филодендрон",
+            "price": 3150,
+            "vcode": "ц2",
+            "availability": true,
+            "category1": "Цветы",
+            "category2": "",
+            "about": "50 см"
+        },
+        {
+            "image": "3.png",
+            "name": "Фикус",
+            "price": 4200,
+            "vcode": "ц3",
+            "availability": false,
+            "category1": "Цветы",
+            "category2": "",
+            "about": "70см"
+        },
+        {
+            "image": "4.png",
+            "name": "Розы",
+            "price": 5300,
+            "vcode": "ц4",
+            "availability": true,
+            "category1": "Цветы",
+            "category2": "",
+            "about": "60 см"
+        },
+        {
+            "image": "5.png",
+            "name": "Кедр",
+            "price": 6500,
+            "vcode": "д5",
+            "availability": false,
+            "category1": "Деревья",
+            "category2": "Уличные растения",
+            "about": "1м"
+        },
+        {
+            "image": "6.png",
+            "name": "Асплениум",
+            "price": 8700,
+            "vcode": "ц6",
+            "availability": true,
+            "category1": "Цветы",
+            "category2": "",
+            "about": "40 см"
+        }
+    ]
+}
