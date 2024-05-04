@@ -1,7 +1,7 @@
 <template>
   <div class="notfound">
     <h1>Такой страницы не существует (404) :(((</h1>
-    <a href="/">В начало</a>
+    <a class="btn button is-success mt-6" href="/main">Вернуться на главную</a>
   </div>
 </template>
   
@@ -10,6 +10,8 @@
   .notfound {
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     font-size: 2em;
   }
