@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import StartPage from "/src/components/StartPage.vue";
 import Main from "/src/components/MainPage.vue";
-import NotFound from "/src/components/notFoundPage.vue";
+import NotFound from "/src/components/NotFoundPage.vue";
 
 export function isAuth(email, pass) {
   return email === "1t@1t.ru" && pass === "1t";
