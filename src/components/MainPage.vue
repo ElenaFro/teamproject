@@ -28,24 +28,27 @@
         </div>
         <div id="navbarBasicExample" class="navbar-menu mt-1">
           <div class="navbar-start">
-            <a class="navbar-item is-size-7" href="/about"> О нас </a>
+            <a class="navbar-item is-size-7" href="/about-us"> О нас </a>
             <a class="navbar-item is-size-7" href="/contacts"> Контакты </a>
             <a class="navbar-item is-size-7" href="/catalog"> Каталог </a>
-            <a class="navbar-item is-size-7 has-text-success-20 ml-6">
+            <a
+              class="navbar-item is-size-7 has-text-success-20 ml-6"
+              href="/search"
+            >
               <svg-icon
                 type="mdi"
                 class="icon is-large"
                 :path="path1"
               ></svg-icon>
             </a>
-            <a class="navbar-item is-size-7 has-text-danger">
+            <a class="navbar-item is-size-7 has-text-danger" href="/favorite">
               <svg-icon
                 type="mdi"
                 class="icon is-large"
                 :path="path2"
               ></svg-icon>
             </a>
-            <a class="navbar-item is-size-7 has-text-success-20">
+            <a class="navbar-item is-size-7 has-text-success-20" href="/card">
               <svg-icon
                 type="mdi"
                 class="icon is-large"
@@ -57,7 +60,7 @@
             <a class="navbar-link is-size-7"> Личный кабинет </a>
             <div class="navbar-dropdown">
               <a class="navbar-item is-size-7" href="/buy"> Заказы </a>
-              <a class="navbar-item is-size-7" href="/card"> Корзина </a>
+              <a class="navbar-item is-size-7" href="/about-me"> Обо мне </a>
               <a class="navbar-item is-size-7" href="/"> Выход </a>
             </div>
           </div>
