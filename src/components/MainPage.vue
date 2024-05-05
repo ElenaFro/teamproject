@@ -35,7 +35,7 @@
               <svg-icon
                 type="mdi"
                 class="icon is-large"
-                :path="path3"
+                :path="path1"
               ></svg-icon>
             </a>
             <a class="navbar-item is-size-7 has-text-danger">
@@ -49,16 +49,16 @@
               <svg-icon
                 type="mdi"
                 class="icon is-large"
-                :path="path1"
+                :path="path3"
               ></svg-icon>
             </a>
           </div>
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link is-size-7"> Личный кабинет </a>
             <div class="navbar-dropdown">
-              <a class="navbar-item is-size-7"> Заказы </a>
-              <a class="navbar-item is-size-7"> Корзина </a>
-              <a class="navbar-item is-size-7"> Выход </a>
+              <a class="navbar-item is-size-7" href="/buy"> Заказы </a>
+              <a class="navbar-item is-size-7" href="/card"> Корзина </a>
+              <a class="navbar-item is-size-7" href="/"> Выход </a>
             </div>
           </div>
         </div>
@@ -138,7 +138,7 @@
 
 <script>
 import SvgIcon from "@jamescoyle/vue-icon";
-import { mdiCart, mdiHeart, mdiMagnify } from "@mdi/js";
+import { mdiMagnify, mdiCart, mdiHeart } from "@mdi/js";
 export default {
   name: "my-component",
   components: {
@@ -146,9 +146,9 @@ export default {
   },
   data() {
     return {
-      path1: mdiCart,
+      path1: mdiMagnify,
       path2: mdiHeart,
-      path3: mdiMagnify,
+      path3: mdiCart,
     };
   },
 };
