@@ -125,18 +125,4 @@ section {
 .hero1 {
   width: 55%;
 }
-
-/* .box-form {
-  width: 700px;
-  height: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: top;
-  margin-right: 300px;
-}
-
-#app {
-  padding-right: 2rem;
-  padding-left: 0;
-} */
 </style>
