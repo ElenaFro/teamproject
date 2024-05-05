@@ -32,24 +32,24 @@
       </figure>
       <h2 class="mb-4 is-size-4 mt-6">Попасть на сайт</h2>
       <div class="field">
-        <label class="label">Электронная почта</label>
+        <label class="label" for="email">Электронная почта</label>
         <div class="control">
           <input
             class="input"
             type="email"
-            name="email"
+            id="email"
             v-model="email"
             placeholder="1t@1t.ru"
           />
         </div>
       </div>
       <div class="field">
-        <label class="label">Пароль</label>
+        <label class="label" for="pswd">Пароль</label>
         <div class="control">
           <input
             class="input"
             type="password"
-            name="pswd"
+            id="pswd"
             v-model="pass"
             placeholder="1t"
           />
