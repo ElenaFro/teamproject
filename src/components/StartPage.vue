@@ -61,7 +61,7 @@
       <button class="button is-success mb-4 mr-3 mt-4" @click="submit">
         Войти
       </button>
-      <button class="button is-success is-outlined mt-4">
+      <button class="button is-success is-outlined mt-4" @click="signUp">
         Зарегистрироваться
       </button>
     </form>
@@ -100,11 +100,27 @@ export default {
       }
     },
     recoverPassword() {
-      if (!isAuth(this.email, this.pass)) {
+      if (this.email === "") {
+        alert("Введите почту");
+      } else if (!isAuth(this.email, this.pass)) {
         alert("Спасибо! Сбросили Ваш пароль на Вашу почту.");
       } else {
-        alert("Вы помните пароль, добро пожаловать!");
+        alert("Вы помните пароль. Добро пожаловать!");
         this.$router.replace("/main");
+      }
+    },
+    signUp() {
+      if (this.email === "" && this.pass === "") {
+        alert("Введите почту и пароль");
+      } else if (this.email === "") {
+        alert("Введите почту");
+      } else if (this.pass === "") {
+        alert("Введите пароль");
+      } else if (isAuth(this.email, this.pass)) {
+        alert("Вы уже зарегистрированы. Добро пожаловать!");
+        this.$router.replace("/main");
+      } else {
+        alert("Поздравляем с регистрацией! Теперь можете войти.");
       }
     },
   },
