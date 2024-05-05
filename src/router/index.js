@@ -3,6 +3,10 @@ import StartPage from "/src/components/StartPage.vue";
 import Main from "/src/components/MainPage.vue";
 import NotFound from "/src/components/notFoundPage.vue";
 
+export function isAuth(email, pass) {
+  return email === "1t" && pass === "1t";
+}
+
 const routes = [
   {
     path: "/",
@@ -13,9 +17,6 @@ const routes = [
     path: "/main",
     name: "main",
     component: Main,
-    meta: {
-      requiresAuth: true,
-    },
   },
   {
     path: "/:pathMatch(.*)*",

@@ -62,6 +62,8 @@
 </template>
 
 <script>
+import { isAuth } from "../router/index.js";
+
 export default {
   data() {
     return {
@@ -71,10 +73,20 @@ export default {
   },
   methods: {
     submit() {
-      if (this.email === "1t" && this.pass === "1t") {
+      if (isAuth(this.email, this.pass)) {
         this.$router.replace("/main");
-      } else {
-        alert("Wrong email or password");
+      } else if (this.email === "") {
+        if (this.pass === "") {
+          alert("Введите почту и пароль");
+        } else {
+          alert("Введите почту");
+        }
+      } else if (this.pass === "") {
+        alert("Введите пароль");
+      } else if (this.email !== "1t") {
+        alert("Такой почты не существует");
+      } else if (this.pass !== "1t") {
+        alert("Такой пароль не подходит");
       }
     },
   },
