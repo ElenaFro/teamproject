@@ -56,7 +56,7 @@
         </div>
       </div>
       <div>
-        <a href="http://">Забыли пароль?</a>
+        <button @click="recoverPassword">Забыли пароль?</button>
       </div>
       <button class="button is-success mb-4 mr-3 mt-4" @click="submit">
         Войти
@@ -97,6 +97,14 @@ export default {
         alert("Такой почты не существует");
       } else if (this.pass !== "1t") {
         alert("Такой пароль не подходит");
+      }
+    },
+    recoverPassword() {
+      if (!isAuth(this.email, this.pass)) {
+        alert("Спасибо! Сбросили Ваш пароль на Вашу почту.");
+      } else {
+        alert("Вы помните пароль, добро пожаловать!");
+        this.$router.replace("/main");
       }
     },
   },
