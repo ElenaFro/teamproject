@@ -79,7 +79,7 @@
             <p class="is-size-6">&#8226; улучшение микроклимата помещений</p>
           </div>
         </div>
-        <div class="banner-image px-3">
+        <div class="banner-image">
           <figure class="image is-140x140">
             <img src="/src/assets/photo_1.png" alt="Placeholder image" />
           </figure>
@@ -163,5 +163,8 @@ export default {
 }
 body {
   background-color: white;
+}
+.image {
+  width: 400px;
 }
 </style>
