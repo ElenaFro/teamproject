@@ -101,7 +101,7 @@ export default {
       if (this.email === "") {
         alert("Введите почту");
       } else if (!isAuth(this.email, this.pass)) {
-        alert("Спасибо! Сбросили Ваш пароль на Вашу почту.");
+        alert("Спасибо! Сбросили Ваш пароль на Вашу почту");
       } else {
         alert("Вы помните пароль. Добро пожаловать!");
         this.$router.replace("/main");
@@ -118,13 +118,12 @@ export default {
         alert("Вы уже зарегистрированы. Добро пожаловать!");
         this.$router.replace("/main");
       } else {
-        alert("Поздравляем с регистрацией! Теперь можете войти.");
+        alert("Поздравляем с регистрацией! Теперь можете войти");
       }
     },
   },
 };
 </script>
-
 
 <style>
 @import "bulma/css/bulma.min.css";
