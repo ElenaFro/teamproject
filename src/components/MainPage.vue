@@ -106,13 +106,19 @@
         </div>
         <div class="column is-narrow">
           <div class="is-flex mt-5">
-            <a class="block px-2" href="#"
+            <a class="block px-2" target="_blank" href="https://vk.com/1tsprint"
               ><img src="/src/assets/socials_vk.svg" alt="VK"
             /></a>
-            <a class="block px-2" href="#"
+            <a
+              class="block px-2"
+              target="_blank"
+              href="https://t.me/sprint_1t_bot"
               ><img src="/src/assets/socials.svg" alt="Telegram"
             /></a>
-            <a class="block px-2" href="#"
+            <a
+              class="block px-2"
+              target="_blank"
+              href="https://www.whatsapp.com/"
               ><img src="/src/assets/socials_w.svg" alt="WhatsApp"
             /></a>
           </div>
