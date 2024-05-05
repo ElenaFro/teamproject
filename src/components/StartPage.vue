@@ -58,7 +58,7 @@
       <div>
         <button @click="recoverPassword">Забыли пароль?</button>
       </div>
-      <button class="button is-success mb-4 mr-3 mt-4" @click="submit">
+      <button class="button is-success mb-4 mr-3 mt-4" @click="login">
         Войти
       </button>
       <button class="button is-success is-outlined mt-4" @click="signUp">
@@ -82,7 +82,7 @@ export default {
     };
   },
   methods: {
-    submit() {
+    login() {
       if (isAuth(this.email, this.pass)) {
         this.$router.replace("/main");
       } else if (this.email === "") {
@@ -93,10 +93,8 @@ export default {
         }
       } else if (this.pass === "") {
         alert("Введите пароль");
-      } else if (this.email !== "1t") {
-        alert("Такой почты не существует");
-      } else if (this.pass !== "1t") {
-        alert("Такой пароль не подходит");
+      } else if (!isAuth(this.email, this.pass)) {
+        alert("Такой почты не существует или пароль не подходит");
       }
     },
     recoverPassword() {
