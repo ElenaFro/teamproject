@@ -13,7 +13,6 @@
           <a class="navbar-item" href="/main">
             <img src="/src/assets/logo_header.png" />
           </a>
-
           <a
             role="button"
             class="navbar-burger has-text-success-dark"
@@ -27,27 +26,11 @@
             <span aria-hidden="true"></span>
           </a>
         </div>
-
         <div id="navbarBasicExample" class="navbar-menu mt-1">
           <div class="navbar-start">
-            <a class="navbar-item is-size-7"> О нас </a>
-
-            <a class="navbar-item is-size-7"> Контакты </a>
-
-            <a class="navbar-item is-size-7"> Каталог </a>
-
-            <div class="navbar-item has-dropdown is-hoverable mr-6">
-              <a class="navbar-link is-size-7 mr-6"> Покупателям </a>
-
-              <div class="navbar-dropdown">
-                <a class="navbar-item is-size-7"> Доставка и оплата </a>
-                <a class="navbar-item is-size-7"> Возврат </a>
-                <a class="navbar-item is-size-7"> Акции </a>
-                <hr class="navbar-divider" />
-                <a class="navbar-item is-size-7"> Новости </a>
-              </div>
-            </div>
-
+            <a class="navbar-item is-size-7" href="/about"> О нас </a>
+            <a class="navbar-item is-size-7" href="/contacts"> Контакты </a>
+            <a class="navbar-item is-size-7" href="/catalog"> Каталог </a>
             <a class="navbar-item is-size-7 has-text-success-20 ml-6">
               <svg-icon
                 type="mdi"
@@ -55,7 +38,6 @@
                 :path="path3"
               ></svg-icon>
             </a>
-
             <a class="navbar-item is-size-7 has-text-danger">
               <svg-icon
                 type="mdi"
@@ -71,10 +53,8 @@
               ></svg-icon>
             </a>
           </div>
-
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link is-size-7"> Личный кабинет </a>
-
             <div class="navbar-dropdown">
               <a class="navbar-item is-size-7"> Заказы </a>
               <a class="navbar-item is-size-7"> Корзина </a>
@@ -84,7 +64,6 @@
         </div>
       </nav>
     </header>
-
     <div class="container">
       <div class="columns is-desktop is-vcentered">
         <div class="column is-narrow mt-6 mx-5">
@@ -107,12 +86,10 @@
         </div>
       </div>
     </div>
-
     <footer class="footer mb-2 pb-2 mt-6">
       <div class="container mt-1 mb-5 px-3">
         <p class="title has-text-success-20 is-3 is-italic">Контакты</p>
       </div>
-
       <div class="container columns is-desctop mx-auto">
         <figure
           class="image is-80x80 column is-narrow is-one-fifth height=100 mb-2 mr-6 ml-4"
@@ -159,24 +136,9 @@
   </div>
 </template>
 
-<style>
-.footer {
-  background-color: rgb(229, 248, 237);
-}
-
-.container {
-  justify-content: space-between;
-}
-
-body {
-  background-color: white;
-}
-</style>
-
 <script>
 import SvgIcon from "@jamescoyle/vue-icon";
 import { mdiCart, mdiHeart, mdiMagnify } from "@mdi/js";
-
 export default {
   name: "my-component",
   components: {
@@ -191,3 +153,15 @@ export default {
   },
 };
 </script>
+
+<style>
+.footer {
+  background-color: rgb(229, 248, 237);
+}
+.container {
+  justify-content: space-between;
+}
+body {
+  background-color: white;
+}
+</style>
