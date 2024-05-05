@@ -2,11 +2,11 @@
   <div class="start-wrapper">
     <section
       class="hero hero1 is-fullheight"
-      style="
-        background-image: url('src/assets/fon.jpg');
-        background-size: center;
-        background-position: left;
-      "
+      :style="{
+        backgroundImage: `url(${fonImage})`,
+        backgroundSize: 'center',
+        backgroundPosition: 'left',
+      }"
     >
       <div class="hero-body">
         <article class="message is-success">
@@ -26,10 +26,9 @@
         </article>
       </div>
     </section>
-
     <form class="box-form ml-6 pl-6 mt-6">
       <figure class="image is-200x200 mx-auto mb-6 mt-6">
-        <img src="src/assets/logo-start.png" />
+        <img :src="logoStart" alt="Мир растений" />
       </figure>
       <h2 class="mb-4 is-size-4 mt-6">Вход / Регистрация</h2>
       <div class="field">
@@ -44,7 +43,6 @@
           />
         </div>
       </div>
-
       <div class="field">
         <label class="label">Пароль</label>
         <div class="control">
@@ -57,7 +55,6 @@
           />
         </div>
       </div>
-
       <div>
         <a href="http://">Забыли пароль?</a>
       </div>
@@ -73,12 +70,15 @@
 
 <script>
 import { isAuth } from "../router/index.js";
-
+import logoStart from "@/assets/logo-start.png";
+import fonImage from "@/assets/fon.jpg";
 export default {
   data() {
     return {
       email: "",
       pass: "",
+      logoStart: logoStart,
+      fonImage: fonImage,
     };
   },
   methods: {
@@ -112,16 +112,13 @@ export default {
 section {
   padding: 20px 0;
 }
-
 .start-wrapper {
   display: flex;
   justify-content: space-between;
 }
-
 .message {
   margin: 60px;
 }
-
 .hero1 {
   width: 55%;
 }
