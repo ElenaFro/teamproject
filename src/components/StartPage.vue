@@ -32,7 +32,7 @@
       </figure>
       <h2 class="mb-4 is-size-4 mt-6">Попасть на сайт</h2>
       <div class="field">
-        <label class="label">Email</label>
+        <label class="label">Электронная почта</label>
         <div class="control">
           <input
             class="input"
