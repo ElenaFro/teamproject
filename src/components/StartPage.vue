@@ -30,7 +30,7 @@
       <figure class="image is-200x200 mx-auto mb-6 mt-6">
         <img :src="logoStart" alt="Мир растений" />
       </figure>
-      <h2 class="mb-4 is-size-4 mt-6">Вход / Регистрация</h2>
+      <h2 class="mb-4 is-size-4 mt-6">Попасть на сайт</h2>
       <div class="field">
         <label class="label">Email</label>
         <div class="control">
