@@ -50,6 +50,8 @@
 </template>
 
 <script>
+import { isAuth } from "../router/index.js";
+
 export default {
   data() {
     return {
@@ -59,7 +61,7 @@ export default {
   },
   methods: {
     submit() {
-      if (this.email === "1t" && this.pass === "1t") {
+      if (isAuth(this.email, this.pass)) {
         this.$router.replace("/main");
       } else if (this.email === "") {
         if (this.pass === "") {
