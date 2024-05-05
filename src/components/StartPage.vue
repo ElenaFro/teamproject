@@ -29,7 +29,7 @@
 
     <form class="box-form ml-6 pl-6 mt-6">
       <figure class="image is-200x200 mx-auto mb-6 mt-6">
-        <img src="/src/assets/logo-start.png" />
+        <img src="src/assets/logo-start.png" />
       </figure>
       <h2 class="mb-4 is-size-4 mt-6">Вход / Регистрация</h2>
       <div class="field">
