@@ -10,7 +10,7 @@
     <header class="container">
       <nav class="navbar px-5" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-          <a class="navbar-item" href="index.html">
+          <a class="navbar-item" href="/main">
             <img src="/src/assets/logo_header.png" />
           </a>
 
