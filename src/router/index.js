@@ -4,7 +4,7 @@ import Main from "/src/components/MainPage.vue";
 import NotFound from "/src/components/notFoundPage.vue";
 
 export function isAuth(email, pass) {
-  return email === "1t" && pass === "1t";
+  return email === "1t@1t.ru" && pass === "1t";
 }
 
 const routes = [

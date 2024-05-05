@@ -39,7 +39,7 @@
             type="email"
             name="email"
             v-model="email"
-            placeholder="1t"
+            placeholder="1t@1t.ru"
           />
         </div>
       </div>
