@@ -69,7 +69,7 @@
 </template>
 
 <script>
-import { isAuth } from "../router/index.js";
+import { isAuth } from "../router/router.js";
 import logoStart from "@/assets/logo-start.png";
 import fonImage from "@/assets/fon.jpg";
 export default {
