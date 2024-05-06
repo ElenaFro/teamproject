@@ -1,13 +1,11 @@
 <template>
-  <div id="app">
-    <RouterPage />
-  </div>
+  <RouterPage />
 </template>
 
 <script>
 import RouterPage from "/src/components/RouterPage.vue";
 export default {
-  name: "app",
+  name: "plant-shop",
   components: {
     RouterPage,
   },
