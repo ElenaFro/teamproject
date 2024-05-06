@@ -4,6 +4,7 @@
       v-for="plant in PLANTS"
       :key="plant.vcode"
       :plant_data="plant"
+      @addToCart="addToCart"
     />
   </div>
 </template>
@@ -20,7 +21,7 @@ export default {
     return {};
   },
   computed: {
-    ...mapGetters(["PLANTS", "CART"]),
+    ...mapGetters(["PLANTS"]),
   },
   methods: {
     ...mapActions(["GET_PLANTS_FROM_API", "ADD_TO_CART"]),
@@ -29,7 +30,11 @@ export default {
     },
   },
   mounted() {
-    this.GET_PLANTS_FROM_API();
+    this.GET_PLANTS_FROM_API().then((response) => {
+      if (response.data) {
+        console.log("data ok");
+      }
+    });
   },
 };
 </script>

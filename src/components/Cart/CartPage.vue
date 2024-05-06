@@ -2,8 +2,7 @@
   <div class="main">
     <MailHeader />
     <Navigation />
-    <h2>КОРЗИНА</h2>
-    <CartItem />
+    <Cart />
     <FooterPart />
   </div>
 </template>
@@ -11,14 +10,14 @@
 <script>
 import MailHeader from "../MailHeader.vue";
 import Navigation from "../Navigation.vue";
-import CartItem from "./CartItem.vue";
+import Cart from "./Cart.vue";
 import FooterPart from "../FooterPart.vue";
 export default {
   name: "catalog",
   components: {
     MailHeader,
     Navigation,
-    CartItem,
+    Cart,
     FooterPart,
   },
   props: {},

@@ -4,10 +4,30 @@ import axios from "axios";
 export default createStore({
   state: {
     plants: [],
+    cart: [],
   },
   mutations: {
     SET_PLANTS_TO_STATE: (state, plants) => {
       state.plants = plants;
+    },
+    SET_CART: (state, plant) => {
+      if (state.cart.length) {
+        let isPlantExists = false;
+        state.cart.map(function (item) {
+          if (item.vcode === plant.vcode) {
+            isPlantExists = true;
+            item.quantity++;
+          }
+        });
+        if (!isPlantExists) {
+          state.cart.push(plant);
+        }
+      } else {
+        state.cart.push(plant);
+      }
+    },
+    REMOVE_FROM_CART: (state, index) => {
+      state.cart.splice(index, 1);
     },
   },
   actions: {
@@ -24,10 +44,19 @@ export default createStore({
           return error;
         });
     },
+    ADD_TO_CART({ commit }, plant) {
+      commit("SET_CART", plant);
+    },
+    DELETE_FROM_CART({ commit }, index) {
+      commit("REMOVE_FROM_CART", index);
+    },
   },
   getters: {
     PLANTS(state) {
       return state.plants;
+    },
+    CART(state) {
+      return state.cart;
     },
   },
   modules: {},
