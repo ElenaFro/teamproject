@@ -1,11 +1,10 @@
 <template>
   <div class="catalog">
-    <CatalogItem />
-    <!-- <CatalogItem
+    <CatalogItem
       v-for="plant in plants"
       :key="plant.vcode"
       :plant_data="plant"
-    /> -->
+    />
   </div>
 </template>
 

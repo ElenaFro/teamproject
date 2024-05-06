@@ -126,7 +126,6 @@ export default {
 </script>
 
 <style>
-@import "bulma/css/bulma.min.css";
 #app {
   display: flex;
 }

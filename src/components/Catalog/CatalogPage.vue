@@ -2,9 +2,7 @@
   <div class="main">
     <MailHeader />
     <Navigation />
-    <h1>catalog start</h1>
     <Catalog />
-    <h2>catalog end</h2>
     <FooterPart />
   </div>
 </template>
