@@ -52,7 +52,7 @@ export default {
   box-shadow: 2px 2px 8px 0 teal;
 }
 .catalog-item__image {
-  width: 250px;
+  height: 250px;
 }
 .catalog-item__name {
   background-color: #48c78e;

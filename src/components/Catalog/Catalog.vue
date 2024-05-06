@@ -119,3 +119,12 @@ export default {
   },
 };
 </script>
+
+<style>
+.catalog {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+}
+</style>
