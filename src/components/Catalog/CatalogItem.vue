@@ -4,7 +4,7 @@
       <img
         class="catalog-item__image"
         :src="'../../src/assets/plantsImages/' + plant_data.image"
-        alt="picture"
+        alt="Растение"
       />
       <p class="catalog-item__name">{{ plant_data.name }}</p>
       <p class="catalog-item__about">{{ plant_data.about }}</p>
