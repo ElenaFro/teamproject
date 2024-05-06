@@ -16,7 +16,7 @@ export default createStore({
         method: "GET",
       })
         .then((plants) => {
-          commit("SET_PLANTS_TO_STATE", plants);
+          commit("SET_PLANTS_TO_STATE", plants.data);
           return plants;
         })
         .catch((error) => {

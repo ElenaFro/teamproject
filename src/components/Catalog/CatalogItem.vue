@@ -32,7 +32,7 @@ export default {
   },
   methods: {
     addToCart() {
-      // Реализация добавления в корзину
+      this.$emit("addToCart", this.plant_data);
     },
   },
 };
@@ -57,8 +57,18 @@ export default {
 .catalog-item__name {
   background-color: #48c78e;
   color: #164630;
-  padding: 0 20px;
+  padding: 6px 12px;
+  font-weight: 400;
   margin: 12px 0;
   font-size: 1.2em;
+  border-radius: 12px 6px;
+}
+.catalog-item__add_to_cart_btn {
+  background-color: teal;
+  padding: 6px 12px;
+  margin: 12px 0 6px 0;
+  border-radius: 6px 12px;
+  color: whitesmoke;
+  font-weight: 700;
 }
 </style>
