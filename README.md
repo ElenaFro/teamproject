@@ -36,6 +36,10 @@ git push -u origin master
 
 ### слежка за db.json
 
-json-server --watch db.json
-work:
+<!-- json-server --watch db.json -->
+
 npx json-server db.json
+
+### удалить все локальные ветки кроме master
+
+git branch | grep -v '^\*' | xargs git branch -D
