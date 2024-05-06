@@ -6,6 +6,7 @@ import contactsPage from "/src/components/Contacts/ContactsPage.vue";
 import CatalogPage from "/src/components/Catalog/CatalogPage.vue";
 import CartPage from "/src/components/Cart/CartPage.vue";
 import NotFoundPage from "/src/components/NotFoundPage.vue";
+
 export function isAuth(email, pass) {
   return email === "1t@1t.ru" && pass === "1t";
 }
