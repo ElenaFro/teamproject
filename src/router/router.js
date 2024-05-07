@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import StartPage from "/src/components/StartPage.vue";
 import MainPage from "/src/components/Main/MainPage.vue";
 import AboutUsPage from "/src/components/AboutUs/AboutUsPage.vue";
-import contactsPage from "/src/components/Contacts/ContactsPage.vue";
+import ContactsPage from "/src/components/Contacts/ContactsPage.vue";
 import CatalogPage from "/src/components/Catalog/CatalogPage.vue";
 import CartPage from "/src/components/Cart/CartPage.vue";
 import NotFoundPage from "/src/components/NotFoundPage.vue";
@@ -42,7 +42,7 @@ const routes = [
   {
     path: "/contacts",
     name: "contacts",
-    component: contactsPage,
+    component: ContactsPage,
   },
   {
     path: "/catalog",
@@ -53,6 +53,7 @@ const routes = [
     path: "/cart",
     name: "cartPage",
     component: CartPage,
+    props: true,
   },
   {
     path: "/:pathMatch(.*)*",

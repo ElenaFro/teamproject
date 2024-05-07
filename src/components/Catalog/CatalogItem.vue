@@ -6,10 +6,12 @@
         :src="'../../src/assets/plantsImages/' + plant_data.image"
         alt="Растение"
       />
+      <p class="catalog-item__sale" v-if="!plant_data.sale">New</p>
+      <p class="catalog-item__sale has-text-danger" v-if="plant_data.sale">Sale</p>
       <p class="catalog-item__name">{{ plant_data.name }}</p>
       <p class="catalog-item__about">{{ plant_data.about }}</p>
       <p class="catalog-item__price">{{ plant_data.price + "₽" }}</p>
-      <button class="catalog-item__add_to_cart_btn pink btn" @click="addToCart">
+      <button class="catalog-item__add_to_cart_btn btn" @click="addToCart">
         В корзину
       </button>
     </div>
@@ -52,7 +54,7 @@ export default {
   box-shadow: 2px 2px 8px 0 teal;
 }
 .catalog-item__image {
-  height: 250px;
+  width: 250px;
 }
 .catalog-item__name {
   background-color: #48c78e;
@@ -71,4 +73,5 @@ export default {
   color: whitesmoke;
   font-weight: 700;
 }
+
 </style>
