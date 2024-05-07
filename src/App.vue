@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import RouterPage from "/src/components/routerPage.vue";
+import RouterPage from "/src/components/RouterPage.vue";
 export default {
   name: "plant-shop",
   components: {
