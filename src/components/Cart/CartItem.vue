@@ -53,7 +53,7 @@ export default {
   padding: 20px;
   box-shadow: 4px 4px 16px 0 yellowgreen;
   &__image {
-    max-width: 200px;
+    max-width: 100px;
   }
 }
 </style>

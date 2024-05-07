@@ -2,7 +2,7 @@
   <header class="container">
     <nav class="navbar px-5" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-        <a class="navbar-item" href="/main">
+        <a class="navbar-item" href="/">
           <img src="/src/assets/logo_header.png" />
         </a>
         <a
@@ -41,7 +41,9 @@
           <div class="navbar-dropdown">
             <a class="navbar-item is-size-7" href="/buy"> Заказы </a>
             <a class="navbar-item is-size-7" href="/about-me"> Обо мне </a>
-            <a class="navbar-item is-size-7" href="/"> Выход </a>
+            <a class="navbar-item is-size-7" @click="logout" href="/">
+              Выход
+            </a>
           </div>
         </div>
       </div>
@@ -63,6 +65,11 @@ export default {
       path2: mdiHeart,
       path3: mdiCart,
     };
+  },
+  methods: {
+    logout() {
+      wasAuth = false;
+    },
   },
 };
 </script>

@@ -2,8 +2,8 @@
   <div class="main">
     <MailHeader />
     <Navigation />
-    <Catalog />
     <Cart v-if="CART.length" :cart_data="CART" />
+    <Catalog />
     <FooterPart />
   </div>
 </template>
