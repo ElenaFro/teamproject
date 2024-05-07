@@ -5,13 +5,8 @@
         <a class="navbar-item" href="/">
           <img src="/src/assets/logo_header.png" />
         </a>
-        <a
-          role="button"
-          class="navbar-burger has-text-success-dark"
-          aria-label="menu"
-          aria-expanded="false"
-          data-target="navbarBasicExample"
-        >
+        <a role="button" class="navbar-burger has-text-success-dark" aria-label="menu" aria-expanded="false"
+          data-target="navbarBasicExample">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
@@ -19,22 +14,22 @@
         </a>
       </div>
       <div id="navbarBasicExample" class="navbar-menu mt-1">
-        <div class="navbar-start">
+        <div class="navbar-start ml-6">
           <a class="navbar-item is-size-7" href="/about-us"> О нас </a>
           <a class="navbar-item is-size-7" href="/contacts"> Контакты </a>
-          <a class="navbar-item is-size-7" href="/catalog"> Каталог </a>
-          <a
-            class="navbar-item is-size-7 has-text-success-20 ml-6"
-            href="/search"
-          >
-            <svg-icon type="mdi" class="icon is-large" :path="path1"></svg-icon>
-          </a>
-          <a class="navbar-item is-size-7 has-text-danger" href="/favorite">
-            <svg-icon type="mdi" class="icon is-large" :path="path2"></svg-icon>
-          </a>
-          <a class="navbar-item is-size-7 has-text-success-20" href="/cart">
-            <svg-icon type="mdi" class="icon is-large" :path="path3"></svg-icon>
-          </a>
+          <a class="navbar-item is-size-7 mr-6" href="/catalog"> Каталог </a>
+          <div class="navbar-item ml-6">
+            <a class="navbar-item is-size-7 has-text-success-20 ml-6" href="/search">
+              <svg-icon type="mdi" class="icon is-large" :path="path1"></svg-icon>
+            </a>
+            <a class="navbar-item is-size-7 has-text-danger" href="/favorite">
+              <svg-icon type="mdi" class="icon is-large" :path="path2"></svg-icon>
+            </a>
+            <a class="navbar-item is-size-7 has-text-success-20" href="/cart">
+              <svg-icon type="mdi" class="icon is-large" :path="path3"></svg-icon>
+            </a>
+          </div>
+          
         </div>
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link is-size-7"> Личный кабинет </a>
