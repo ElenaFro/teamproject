@@ -69,7 +69,7 @@
 </template>
 
 <script>
-import { isAuth } from "../router/index.js";
+import { isUserAuth } from "../router/router.js";
 import logoStart from "@/assets/logo-start.png";
 import fonImage from "@/assets/fon.jpg";
 export default {
@@ -83,7 +83,7 @@ export default {
   },
   methods: {
     login() {
-      if (isAuth(this.email, this.pass)) {
+      if (isUserAuth(this.email, this.pass)) {
         this.$router.replace("/main");
       } else if (this.email === "") {
         if (this.pass === "") {
@@ -93,14 +93,14 @@ export default {
         }
       } else if (this.pass === "") {
         alert("Введите пароль");
-      } else if (!isAuth(this.email, this.pass)) {
+      } else if (!isUserAuth(this.email, this.pass)) {
         alert("Такой почты не существует или пароль не подходит");
       }
     },
     recoverPassword() {
       if (this.email === "") {
         alert("Введите почту");
-      } else if (!isAuth(this.email, this.pass)) {
+      } else if (!isUserAuth(this.email, this.pass)) {
         alert("Спасибо! Сбросили Ваш пароль на Вашу почту");
       } else {
         alert("Вы помните пароль. Добро пожаловать!");
@@ -114,7 +114,7 @@ export default {
         alert("Введите почту");
       } else if (this.pass === "") {
         alert("Введите пароль");
-      } else if (isAuth(this.email, this.pass)) {
+      } else if (isUserAuth(this.email, this.pass)) {
         alert("Вы уже зарегистрированы. Добро пожаловать!");
         this.$router.replace("/main");
       } else {

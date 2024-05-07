@@ -7,9 +7,21 @@ import CatalogPage from "/src/components/Catalog/CatalogPage.vue";
 import CartPage from "/src/components/Cart/CartPage.vue";
 import NotFoundPage from "/src/components/NotFoundPage.vue";
 
-export function isAuth(email, pass) {
-  return email === "1t@1t.ru" && pass === "1t";
+let wasUserAuth = false;
+
+export function isUserAuth(email, pass) {
+  wasUserAuth = email === "1t@1t.ru" && pass === "1t";
+  return wasUserAuth;
 }
+
+const authGuard = (to, from, next) => {
+  if (wasUserAuth) next();
+  else {
+    alert("Извините, но Вы не авторизованы!");
+    next("/");
+  }
+};
+
 const routes = [
   {
     path: "/",
@@ -20,6 +32,7 @@ const routes = [
     path: "/main",
     name: "mainPage",
     component: MainPage,
+    beforeEnter: authGuard,
   },
   {
     path: "/about-us",
@@ -47,8 +60,10 @@ const routes = [
     component: NotFoundPage,
   },
 ];
+
 const router = createRouter({
   history: createWebHistory(),
   routes,
 });
+
 export default router;
