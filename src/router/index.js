@@ -40,6 +40,7 @@ const routes = [
     path: "/cart",
     name: "cartPage",
     component: CartPage,
+    props: true,
   },
   {
     path: "/:pathMatch(.*)*",
