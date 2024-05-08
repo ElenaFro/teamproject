@@ -22,7 +22,7 @@
     <div class="select is-small mr-4">
       <select v-model="filterOptions.availability">
         <option value="">Все (наличие)</option>
-        <option value="true">В наличиии</option>
+        <option value="true">В наличии</option>
         <option value="false">Нет в наличии</option>
       </select>
     </div>
