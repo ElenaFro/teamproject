@@ -1,5 +1,5 @@
 <template>
-        <div class="ml-5">
+        <div class="ml-5 mt-6 mb-4">
             <h3 class="title has-text-success-25 is-4 is-italic">Распродажа</h3>
         </div>
         <CatalogSale />

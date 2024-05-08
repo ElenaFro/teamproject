@@ -2,7 +2,7 @@
   <div class="catalog-items">
     <div class="catalog-item">
       <img
-        class="catalog-item__image"
+        class="catalog-item__image mx-3"
         :src="'../../src/assets/plantsImages/' + plant_data.image"
         alt="Растение"
       />
@@ -35,6 +35,7 @@ export default {
   methods: {
     addToCart() {
       this.$emit("addToCart", this.plant_data);
+      this.$router.push({ name: 'CartPage' }); // Переход на страницу CartPage
     },
   },
 };
@@ -51,15 +52,17 @@ export default {
   align-items: center;
   margin: 20px;
   padding: 20px;
-  box-shadow: 2px 2px 8px 0 teal;
+  border-radius: 10px;
+  border: 1px solid rgb(216, 216, 216);
+  box-shadow: 2px 2px 8px 0 rgb(208, 218, 218);
 }
 .catalog-item__image {
-  width: 250px;
+  width: 300px;
 }
 .catalog-item__name {
   background-color: #48c78e;
   color: #164630;
-  padding: 6px 12px;
+  padding: 6px 18px;
   font-weight: 400;
   margin: 12px 0;
   font-size: 1.2em;
@@ -67,11 +70,11 @@ export default {
 }
 .catalog-item__add_to_cart_btn {
   background-color: teal;
-  padding: 6px 12px;
+  padding: 10px 20px;
   margin: 12px 0 6px 0;
   border-radius: 6px 12px;
   color: whitesmoke;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 </style>
