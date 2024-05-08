@@ -1,6 +1,6 @@
 <template>
   <div class="notfound">
-    <figure class="image mr-6">
+    <figure class="image">
           <img src="/src/assets/photo_2.svg" alt="Placeholder image" />
         </figure>
     <h1>Такой страницы не существует (404) :(((</h1>

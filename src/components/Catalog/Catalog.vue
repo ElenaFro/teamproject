@@ -26,7 +26,7 @@
         <option value="false">Нет в наличии</option>
       </select>
     </div>
-
+    
     <input type="checkbox" v-model="filterOptions.sale"> Со скидкой
   </div>
 
