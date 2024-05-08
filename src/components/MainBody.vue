@@ -1,9 +1,9 @@
 <template>
-  <div class="container">
+  <div class="container1">
     <div class="columns is-desktop is-vcentered">
-      <div class="column mt-6 mx-5">
+      <div class="column  mt-6 mx-5">
         <div>
-          <h1 class="title has-text-success-25 is-2 is-italic">Мир растений</h1>
+          <h1 class="title has-text-left has-text-success-25 is-2 is-italic">Зеленый мир</h1>
         </div>
         <div class="pt-6 mb-6 mr-6">
           <p class="is-size-6 mt-6">&#8226; для дома и офиса</p>
