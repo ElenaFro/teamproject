@@ -28,7 +28,7 @@ export default {
     Catalog,
     FooterPart,
   },
-  props: {},
+  props: {},    
   data() {
     return {};
   },

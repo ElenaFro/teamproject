@@ -6,7 +6,7 @@
       :src="'../../src/assets/plantsImages/' + cart_item_data.image"
       alt="Растение"
       />
-      <p>{{ cart_item_data.name }}</p>
+      <a class="cart_item_data__name has-text-success">{{ cart_item_data.name }}</a>
     </div>
 
     <div class="cart_item_data__info column">
@@ -17,7 +17,7 @@
       <p>Количество</p>
       <p>{{ cart_item_data.quantity }} шт.</p>
     </div>
-    <button @click="deleteFromCart">Удалить</button>
+    <button  class="button is-success is-light" @click="deleteFromCart">Удалить</button>
   </div>
 </template>
 

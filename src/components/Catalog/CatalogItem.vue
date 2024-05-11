@@ -42,6 +42,7 @@ export default {
 
 <style>
 .catalog-items {
+  position: relative;
   display: flex;
   justify-content: center;
 }
@@ -50,13 +51,16 @@ export default {
   flex-direction: column;
   align-items: center;
   margin: 20px;
-  padding: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   border-radius: 10px;
   border: 1px solid rgb(216, 216, 216);
   box-shadow: 2px 2px 8px 0 rgb(208, 218, 218);
 }
 .catalog-item__image {
-  width: 300px;
+  width: 250px;
 }
 .catalog-item__name {
   background-color: #48c78e;
@@ -84,5 +88,11 @@ export default {
 
 .catalog-item__add_to_cart_btn:active{
   background-color: rgb(1, 87, 87);
+}
+
+.catalog-item__sale {
+  position: absolute;
+  top: 30px;
+  left: 40px;
 }
 </style>
