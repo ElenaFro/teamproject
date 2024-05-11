@@ -1,8 +1,8 @@
 <template>
   <div class="cart_item columns">
-    <div class="column is-one-third">
+    <div class="cart_item_plant column is-one-third">
       <img
-      class="cart_item__image"
+      class="cart_item__image mr-6"
       :src="'../../src/assets/plantsImages/' + cart_item_data.image"
       alt="Растение"
       />
@@ -10,7 +10,8 @@
     </div>
 
     <div class="cart_item_data__info column">
-      <p>{{ cart_item_data.price }}</p>
+      <p>Цена</p>
+      <p>{{ cart_item_data.price }} руб.</p>
     </div>
     <div class="cart_item_data__quantity column">
       <p>Количество</p>
@@ -60,5 +61,10 @@ export default {
   &__image {
     max-width: 100px;
   }
+}
+
+.cart_item_plant {
+  display: flex;
+  align-items: center;
 }
 </style>
