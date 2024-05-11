@@ -1,19 +1,17 @@
 <template>
   <div class="main">
     <MailHeader />
-    <Navigation />
-    <Cart v-if="CART.length" :cart_data="CART" />
+    <Navigation :cart_data="CART" />
     <Catalog />
     <FooterPart />
   </div>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 import MailHeader from "../MailHeader.vue";
 import Navigation from "../Navigation.vue";
 import Catalog from "./Catalog.vue";
-import Cart from "../Cart/Cart.vue";
 import FooterPart from "../FooterPart.vue";
 export default {
   name: "catalogPage",
@@ -21,7 +19,6 @@ export default {
     MailHeader,
     Navigation,
     Catalog,
-    Cart,
     FooterPart,
   },
   props: {},
@@ -29,7 +26,7 @@ export default {
     return {};
   },
   computed: {
-    ...mapGetters(["CART"]),
+    ...mapGetters(["CART", "PLANTS"]),
   },
 };
 </script>

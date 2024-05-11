@@ -21,7 +21,7 @@
 
     <div class="select is-small mr-4">
       <select v-model="filterOptions.availability">
-        <option value="">Все (наличие)</option>
+        <option value="">Наличие</option>
         <option value="true">В наличии</option>
         <option value="false">Нет в наличии</option>
       </select>
@@ -29,10 +29,6 @@
     
     <input type="checkbox" v-model="filterOptions.sale"> Со скидкой
   </div>
-
-  <!-- <div class="catalog">
-    <CatalogItem v-for="plant in PLANTS" :key="plant.vcode" :plant_data="plant" @addToCart="addToCart" />
-  </div> -->
 
   <div class="catalog">
     <CatalogItem v-for="plant in filteredPlants" :key="plant.vcode" :plant_data="plant" @addToCart="addToCart" />
@@ -75,7 +71,7 @@ export default {
     ...mapActions(["GET_PLANTS_FROM_API", "ADD_TO_CART"]),
     addToCart(data) {
       this.ADD_TO_CART(data);
-      // this.$router.push({ name: 'CartPage' }); // Переход на страницу CartPage
+      console.log(data)
     },
     filterPlants() {
       return this.PLANTS.filter(plant => {

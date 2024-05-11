@@ -11,7 +11,7 @@
       <p class="catalog-item__name">{{ plant_data.name }}</p>
       <p class="catalog-item__about">{{ plant_data.about }}</p>
       <p class="catalog-item__price">{{ plant_data.price + "₽" }}</p>
-      <button class="catalog-item__add_to_cart_btn btn" @click="addToCart">
+      <button class="button is-success catalog-item__add_to_cart_btn btn" @click="addToCart">
         В корзину
       </button>
     </div>
@@ -35,8 +35,7 @@ export default {
   methods: {
     addToCart() {
       this.$emit("addToCart", this.plant_data);
-      this.$router.push({ name: 'CartPage' }); // Переход на страницу CartPage
-    },
+     },
   },
 };
 </script>
@@ -75,6 +74,15 @@ export default {
   border-radius: 6px 12px;
   color: whitesmoke;
   font-weight: 600;
+  transition: background-color 0.3s;
 }
 
+.catalog-item__add_to_cart_btn:hover{
+  background-color: rgb(7, 150, 150);
+  border: 1px solid teel;
+}
+
+.catalog-item__add_to_cart_btn:active{
+  background-color: rgb(1, 87, 87);
+}
 </style>
