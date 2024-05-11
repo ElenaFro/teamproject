@@ -1,8 +1,8 @@
 <template>
   <div class="cart">
     <MailHeader />
-    <Navigation :cart_data="CART" />
-    <p class="title has-text-success-25 is-4 is-italic ml-3">Корзина</p>
+    <Navigation />
+    <p class="title has-text-success-25 is-4 is-italic ml-5">Корзина</p>
     <CartItem
       v-for="(item, index) in CART"
       :key="item.vcode"

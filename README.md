@@ -34,6 +34,12 @@ git add .
 git commit -m "comments"
 git push -u origin master
 
+### coхранить изменения в ветке
+
+git add .
+git commit -m "коммент"
+git push origin имя ветки
+
 ### слежка за db.json
 
 <!-- json-server --watch db.json -->

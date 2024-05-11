@@ -3,7 +3,7 @@
     <div class="column is-one-third">
       <img
       class="cart_item__image"
-      :src="'../src/assets/plantsImages/' + cart_item_data.image"
+      :src="'../../src/assets/plantsImages/' + cart_item_data.image"
       alt="Растение"
       />
       <p>{{ cart_item_data.name }}</p>
@@ -51,7 +51,7 @@ export default {
   // display: flex;
   // flex-wrap: nowrap;
   justify-content: space-between;
-  // align-items: center;
+  align-items: center;
   margin: 20px;
   padding: 20px;
   border-radius: 10px;
