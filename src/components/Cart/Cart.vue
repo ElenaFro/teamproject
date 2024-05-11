@@ -2,7 +2,7 @@
   <div class="cart">
     <MailHeader />
     <Navigation :cart_data="CART" />
-    <h2>Корзина</h2>
+    <p class="title has-text-success-25 is-4 is-italic ml-3">Корзина</p>
     <CartItem
       v-for="(item, index) in CART"
       :key="item.vcode"

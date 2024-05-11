@@ -32,7 +32,7 @@ const routes = [
     path: "/main",
     name: "mainPage",
     component: MainPage,
-    beforeEnter: authGuard,
+    // beforeEnter: authGuard,
   },
   {
     path: "/about-us",

@@ -1,17 +1,20 @@
 <template>
-  <div class="cart_item">
-    <img
+  <div class="cart_item columns">
+    <div class="column is-one-third">
+      <img
       class="cart_item__image"
-      :src="'../../src/assets/plantsImages/' + cart_item_data.image"
+      :src="'../src/assets/plantsImages/' + cart_item_data.image"
       alt="Растение"
-    />
-    <div class="cart_item_data__info">
+      />
       <p>{{ cart_item_data.name }}</p>
+    </div>
+
+    <div class="cart_item_data__info column">
       <p>{{ cart_item_data.price }}</p>
     </div>
-    <div class="cart_item_data__quantity">
+    <div class="cart_item_data__quantity column">
       <p>Количество</p>
-      <p>{{ cart_item_data.quantity }}</p>
+      <p>{{ cart_item_data.quantity }} шт.</p>
     </div>
     <button @click="deleteFromCart">Удалить</button>
   </div>
@@ -45,13 +48,15 @@ export default {
 
 <style lang="scss">
 .cart_item {
-  display: flex;
-  flex-wrap: nowrap;
+  // display: flex;
+  // flex-wrap: nowrap;
   justify-content: space-between;
-  align-items: center;
+  // align-items: center;
   margin: 20px;
   padding: 20px;
-  box-shadow: 4px 4px 16px 0 yellowgreen;
+  border-radius: 10px;
+  border: 1px solid rgb(216, 216, 216);
+  box-shadow: 2px 2px 8px 0 rgb(208, 218, 218);
   &__image {
     max-width: 100px;
   }
