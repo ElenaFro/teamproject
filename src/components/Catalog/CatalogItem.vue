@@ -35,8 +35,7 @@ export default {
   methods: {
     addToCart() {
       this.$emit("addToCart", this.plant_data);
-      this.$router.push({ name: 'CartPage' }); // Переход на страницу CartPage
-    },
+      },
   },
 };
 </script>

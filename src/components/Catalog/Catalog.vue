@@ -30,10 +30,6 @@
     <input type="checkbox" v-model="filterOptions.sale"> Со скидкой
   </div>
 
-  <!-- <div class="catalog">
-    <CatalogItem v-for="plant in PLANTS" :key="plant.vcode" :plant_data="plant" @addToCart="addToCart" />
-  </div> -->
-
   <div class="catalog">
     <CatalogItem v-for="plant in filteredPlants" :key="plant.vcode" :plant_data="plant" @addToCart="addToCart" />
   </div>
@@ -75,7 +71,6 @@ export default {
     ...mapActions(["GET_PLANTS_FROM_API", "ADD_TO_CART"]),
     addToCart(data) {
       this.ADD_TO_CART(data);
-      // this.$router.push({ name: 'CartPage' }); // Переход на страницу CartPage
     },
     filterPlants() {
       return this.PLANTS.filter(plant => {
