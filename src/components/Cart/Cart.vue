@@ -11,9 +11,11 @@
       @increaseQuantity="increaseItemQuantity(index)"
       @decreaseQuantity="decreaseItemQuantity(index)"
     />
-    <div class="ml-6 mb-6" v-if="totalCost !== 0">
-      <p class="ml-2 my-3">Стоимость: {{ totalCost }} руб.</p>
-      <button class="button is-success">Оформить заказ</button>
+    <div class="columns is-centered">
+      <div class="ml-6 mb-6 column is-narrow is-offset-8" v-if="totalCost !== 0">
+        <p class="ml-2 my-3">Стоимость: {{ totalCost }} руб.</p>
+        <button class="button is-success">Оформить заказ</button>
+      </div>
     </div>
     <FooterPart />
   </div>
@@ -43,12 +45,15 @@ export default {
     },
   },
   data() {
-    return {
-      totalCost: 1,
-    };
+    return {};
   },
   computed: {
     ...mapGetters(["CART"]),
+    totalCost() {
+        return this.CART.reduce((total, item) => {
+            return total + (item.price * item.quantity);
+        }, 0);
+    }
   },
   methods: {
     ...mapActions(["DELETE_FROM_CART"]),

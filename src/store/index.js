@@ -10,20 +10,28 @@ export default createStore({
     SET_PLANTS_TO_STATE: (state, plants) => {
       state.plants = plants;
     },
+    // SET_CART: (state, plant) => {
+    //   if (state.cart.length) {
+    //     let isPlantExists = false;
+    //     state.cart.map(function (item) {
+    //       if (item.vcode === plant.vcode) {
+    //         isPlantExists = true;
+    //         item.quantity++;
+    //       }
+    //     });
+    //     if (!isPlantExists) {
+    //       state.cart.push(plant);
+    //     }
+    //   } else {
+    //     state.cart.push(plant);
+    //   }
+    // },
     SET_CART: (state, plant) => {
-      if (state.cart.length) {
-        let isPlantExists = false;
-        state.cart.map(function (item) {
-          if (item.vcode === plant.vcode) {
-            isPlantExists = true;
-            item.quantity++;
-          }
-        });
-        if (!isPlantExists) {
-          state.cart.push(plant);
-        }
+      let existingPlant = state.cart.find(item => item.vcode === plant.vcode);
+      if (existingPlant) {
+        existingPlant.quantity++;
       } else {
-        state.cart.push(plant);
+        state.cart.push({ ...plant, quantity: 1 });
       }
     },
     REMOVE_FROM_CART: (state, index) => {

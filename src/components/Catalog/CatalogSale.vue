@@ -30,6 +30,7 @@
       ...mapActions(["GET_PLANTS_FROM_API", "ADD_TO_CART"]),
       addToCart(data) {
         this.ADD_TO_CART(data);
+        console.log(data)
       },
     },
     mounted() {
