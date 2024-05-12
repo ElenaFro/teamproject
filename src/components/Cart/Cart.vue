@@ -8,6 +8,8 @@
       :key="item.vcode"
       :cart_item_data="item"
       @deleteFromCart="deleteFromCart(index)"
+      @increaseQuantity="increaseItemQuantity(index)"
+      @decreaseQuantity="decreaseItemQuantity(index)"
     />
     <FooterPart />
   </div>
@@ -46,6 +48,13 @@ export default {
     ...mapActions(["DELETE_FROM_CART"]),
     deleteFromCart(index) {
       this.DELETE_FROM_CART(index);
+    },
+      ...mapActions(["INCREASE_ITEM_QUANTITY", "DECREASE_ITEM_QUANTITY"]),
+    increaseItemQuantity(index) {
+      this.INCREASE_ITEM_QUANTITY(index);
+    },
+    decreaseItemQuantity(index) {
+      this.DECREASE_ITEM_QUANTITY(index);
     },
   },
 };

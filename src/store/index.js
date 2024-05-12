@@ -29,6 +29,14 @@ export default createStore({
     REMOVE_FROM_CART: (state, index) => {
       state.cart.splice(index, 1);
     },
+    INCREMENT_QUANTITY: (state, index) => {
+      state.cart[index].quantity++;
+    },
+    DECREMENT_QUANTITY: (state, index) => {
+      if (state.cart[index].quantity > 1) {
+        state.cart[index].quantity--;
+      }
+    },
   },
   actions: {
     GET_PLANTS_FROM_API({ commit }) {
@@ -50,6 +58,12 @@ export default createStore({
     DELETE_FROM_CART({ commit }, index) {
       commit("REMOVE_FROM_CART", index);
     },
+    INCREASE_ITEM_QUANTITY({ commit }, index) {
+      commit('INCREMENT_QUANTITY', index);
+    },
+    DECREASE_ITEM_QUANTITY({ commit }, index) {
+      commit('DECREMENT_QUANTITY', index);
+    }
   },
   getters: {
     PLANTS(state) {

@@ -15,9 +15,15 @@
     </div>
     <div class="cart_item_data__quantity column">
       <p>Количество</p>
-      <p>{{ cart_item_data.quantity }} шт.</p>
+      <div class="incr columns mt-2">
+        <span class=" tag incr_button column is-narrow is-success is-light py-0 px-2" @click="decreaseQuantity">−</span>
+        <p class="column is-narrow">{{ cart_item_data.quantity }} шт.</p>
+        <span class=" tag incr_button column is-narrow is-success is-light py-0 px-2" @click="increaseQuantity">+</span>
+      </div>
+      
     </div>
     <button  class="button is-success is-light" @click="deleteFromCart">Удалить</button>
+    
   </div>
 </template>
 
@@ -40,6 +46,12 @@ export default {
     deleteFromCart() {
       this.$emit("deleteFromCart");
     },
+    increaseQuantity() {
+      this.$emit('increaseQuantity', this.cart_item_data.index);
+    },
+    decreaseQuantity() {
+      this.$emit('decreaseQuantity', this.cart_item_data.index);
+    }
   },
   mounted() {
     this.cart_item_data["quantity"] = 1;
@@ -65,6 +77,16 @@ export default {
 
 .cart_item_plant {
   display: flex;
+  align-items: center;
+}
+.incr_button {
+  border: 1px solid rgb(216, 216, 216);
+  box-shadow: 2px 2px 4px 0 rgb(208, 218, 218);
+  font-size: 20px;
+  // line-height: 20px;
+}
+
+.incr {
   align-items: center;
 }
 </style>
