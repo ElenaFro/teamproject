@@ -11,6 +11,10 @@
       @increaseQuantity="increaseItemQuantity(index)"
       @decreaseQuantity="decreaseItemQuantity(index)"
     />
+    <div class="ml-6 mb-6" v-if="totalCost !== 0">
+      <p class="ml-2 my-3">Стоимость: {{ totalCost }} руб.</p>
+      <button class="button is-success">Оформить заказ</button>
+    </div>
     <FooterPart />
   </div>
 </template>
@@ -39,7 +43,9 @@ export default {
     },
   },
   data() {
-    return {};
+    return {
+      totalCost: 1,
+    };
   },
   computed: {
     ...mapGetters(["CART"]),
