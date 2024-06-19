@@ -4,7 +4,7 @@ import MainPage from "/src/components/Main/MainPage.vue";
 import AboutUsPage from "/src/components/AboutUs/AboutUsPage.vue";
 import ContactsPage from "/src/components/Contacts/ContactsPage.vue";
 import CatalogPage from "/src/components/Catalog/CatalogPage.vue";
-import CartPage from "/src/components/Cart/CartPage.vue";
+import Cart from "/src/components/Cart/Cart.vue";
 import NotFoundPage from "/src/components/NotFoundPage.vue";
 
 let wasUserAuth = false;
@@ -32,7 +32,7 @@ const routes = [
     path: "/main",
     name: "mainPage",
     component: MainPage,
-    beforeEnter: authGuard,
+    // beforeEnter: authGuard,
   },
   {
     path: "/about-us",
@@ -50,10 +50,10 @@ const routes = [
     component: CatalogPage,
   },
   {
-    path: "/cart",
-    name: "cartPage",
-    component: CartPage,
-    // props: true,
+    path: '/cart/:cart_data*',
+    name: 'cart',
+    component: Cart,
+    props: true
   },
   {
     path: "/:pathMatch(.*)*",

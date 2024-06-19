@@ -1,6 +1,6 @@
 <template>
 
-  <div class="catalog-filters  mt-6 ml-6 mb-5">
+  <div class="catalog-filters  mt-6 ml-3 mb-5">
 
     <div class="select is-small mr-3">
       <select v-model="filterOptions.category1">
@@ -21,7 +21,7 @@
 
     <div class="select is-small mr-4">
       <select v-model="filterOptions.availability">
-        <option value="">Все (наличие)</option>
+        <option value="">Наличие</option>
         <option value="true">В наличии</option>
         <option value="false">Нет в наличии</option>
       </select>
@@ -71,6 +71,7 @@ export default {
     ...mapActions(["GET_PLANTS_FROM_API", "ADD_TO_CART"]),
     addToCart(data) {
       this.ADD_TO_CART(data);
+      console.log(data)
     },
     filterPlants() {
       return this.PLANTS.filter(plant => {
