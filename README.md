@@ -56,6 +56,7 @@ git branch | grep -v '^\*' | xargs git branch -D
 
 ##### Создаём БД MySQL
 
+```
 CREATE DATABASE plant_shop;
 USE plant_shop;
 
@@ -72,6 +73,7 @@ CREATE TABLE plants (
   sale BOOLEAN,
   care TEXT
 );
+```
 
 ##### Включаем сервер
 
