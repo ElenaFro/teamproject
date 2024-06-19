@@ -64,6 +64,10 @@
       <button class="button is-success is-outlined mt-4" @click="signUp">
         Зарегистрироваться
       </button>
+      <br>
+      <button class="button is-success is-outlined mt-4" id="temp-button" @click="goToPlants">
+        Проверить склад товаров
+      </button>
     </form>
   </div>
 </template>
@@ -121,6 +125,9 @@ export default {
         alert("Поздравляем с регистрацией! Теперь можете войти");
       }
     },
+    goToPlants() {
+      this.$router.replace("/get-plants");
+    }
   },
 };
 </script>
@@ -141,5 +148,11 @@ section {
 }
 .hero1 {
   width: 55%;
+}
+
+#temp-button {
+    border-color: yellow;
+    color: yellow;
+    background-color: black;
 }
 </style>

@@ -6,6 +6,7 @@ import ContactsPage from "/src/components/Contacts/ContactsPage.vue";
 import CatalogPage from "/src/components/Catalog/CatalogPage.vue";
 import Cart from "/src/components/Cart/Cart.vue";
 import NotFoundPage from "/src/components/notFoundPage.vue";
+import GetPlants from "/src/components/GetPlants.vue";
 
 let wasUserAuth = false;
 
@@ -38,6 +39,11 @@ const routes = [
     path: "/about-us",
     name: "aboutUs",
     component: AboutUsPage,
+  },
+  {
+    path: "/get-plants",
+    name: "getPlants",
+    component: GetPlants,
   },
   {
     path: "/contacts",
