@@ -49,3 +49,40 @@ npx json-server db.json
 ### удалить все локальные ветки кроме master
 
 git branch | grep -v '^\*' | xargs git branch -D
+
+========
+
+#### БЭКЕНД-ПРАКТИКА
+
+##### Создаём БД MySQL
+
+CREATE DATABASE plant_shop;
+USE plant_shop;
+
+CREATE TABLE plants (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  image VARCHAR(255),
+  name VARCHAR(255),
+  price DECIMAL(10, 2),
+  vcode VARCHAR(50),
+  availability BOOLEAN,
+  category1 VARCHAR(255),
+  category2 VARCHAR(255),
+  about TEXT,
+  sale BOOLEAN,
+  care TEXT
+);
+
+##### Включаем сервер
+
+cd server
+
+node server.js
+
+##### Включаем фронтенд
+
+cd ..
+
+npm run dev
+
+###### Заходим в компонент GetPlants (черно-желтая кнопочка на стартовой странице)
