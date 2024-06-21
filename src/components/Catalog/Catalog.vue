@@ -1,6 +1,6 @@
 <template>
-
-  <div class="catalog-filters  mt-6 ml-3 mb-5">
+  <div>
+    <div class="catalog-filters  mt-6 ml-3 mb-5">
 
     <div class="select is-small mr-3">
       <select v-model="filterOptions.category1">
@@ -21,19 +21,20 @@
 
     <div class="select is-small mr-4">
       <select v-model="filterOptions.availability">
-        <option value="">Наличие</option>
-        <option value="true">В наличии</option>
-        <option value="false">Нет в наличии</option>
+        <option value= "">Наличие</option>
+        <option value= 1>В наличии</option>
+        <option value= 0>Нет в наличии</option>
       </select>
     </div>
-    
+
     <input type="checkbox" v-model="filterOptions.sale"> Со скидкой
-  </div>
+    </div>
 
-  <div class="catalog">
+    <div class="catalog">
     <CatalogItem v-for="plant in filteredPlants" :key="plant.vcode" :plant_data="plant" @addToCart="addToCart" />
-  </div>
+    </div>
 
+  </div>
 </template>
 
 <script>
@@ -77,8 +78,9 @@ export default {
       return this.PLANTS.filter(plant => {
         let passCategory1 = this.filterOptions.category1 === "" || plant.category1 === this.filterOptions.category1;
         let passCategory2 = this.filterOptions.category2 === "" || plant.category2 === this.filterOptions.category2;
-        let passAvailability = this.filterOptions.availability === "" || plant.availability.toString() === this.filterOptions.availability;
-        let passSale = !this.filterOptions.sale || plant.sale === this.filterOptions.sale;
+        let passAvailability = this.filterOptions.availability === "" || plant.availability === parseInt(this.filterOptions.availability);
+
+        let passSale = !this.filterOptions.sale || (this.filterOptions.sale && plant.sale === 1);
         return passCategory1 && passCategory2 && passAvailability && passSale;
       });
     }

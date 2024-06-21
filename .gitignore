@@ -30,4 +30,4 @@ coverage
 *.tsbuildinfo
 
 # Правильно создавать .env вручную на новой машине
-# .env
+*.env
