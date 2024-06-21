@@ -1,8 +1,13 @@
 const express = require('express');
-const mysql = require('mysql');
+const mysql = require('mysql2');
 const cors = require('cors');
+const dotenv = require('dotenv');
+
+// Загружаем переменные окружения из .env файла
+dotenv.config();
+
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // Настройка CORS
 app.use(cors());
@@ -10,10 +15,10 @@ app.use(express.json());
 
 // Настройка соединения с базой данных
 const db = mysql.createConnection({
-  host: 'localhost',// 'MYSQL-8.0'
-  user: 'root',
-  password: '',
-  database: 'plant_shop'
+  host: process.env.DB_HOST || 'MYSQL-8.0',
+  user: process.env.DB_USER || 'root',
+  password: process.env.DB_PASSWORD || '',
+  database: process.env.DB_NAME || 'plant_shop'
 });
 
 db.connect(err => {
