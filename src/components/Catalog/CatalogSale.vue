@@ -23,7 +23,7 @@
     computed: {
       ...mapGetters(["PLANTS"]),
       salePlants() {
-         return this.PLANTS.filter(plant => plant.sale === true);
+         return this.PLANTS.filter(plant => plant.sale === 1);
       }
     },
     methods: {

@@ -31,3 +31,5 @@ coverage
 
 # Правильно создавать .env вручную на новой машине
 *.env
+
+package-lock.json
