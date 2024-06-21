@@ -10,7 +10,7 @@ app.use(express.json());
 
 // Настройка соединения с базой данных
 const db = mysql.createConnection({
-  host: 'localhost',
+  host: 'localhost',// 'MYSQL-8.0'
   user: 'root',
   password: '',
   database: 'plant_shop'
