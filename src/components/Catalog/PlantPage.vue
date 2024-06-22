@@ -12,7 +12,7 @@
                 <p class="plant-page__availability"> В наличии: {{ plant.availability }}</p>
                 <p class="plant-page__care"> Особенности ухода за растением: {{ plant.care }}</p>
                 <p class="plant-page__price"> Цена: {{ plant.price + "₽" }}</p>
-                <button class="button is-success plant-page__add_to_cart_btn btn" @click="addToCart">
+                <button class="button is-success plant-page__add_to_cart_btn btn" @click="addToCartAction">
                     В корзину
                 </button>
             </div>
@@ -45,8 +45,9 @@ export default {
     },
 
     methods: {
-        addToCart() {
-            this.$emit("addToCart", this.plant);
+        ...mapActions(["ADD_TO_CART"]),
+        addToCartAction() {
+            this.ADD_TO_CART(this.plant);
         }
     },
     mounted() {
