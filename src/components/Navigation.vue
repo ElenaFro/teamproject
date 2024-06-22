@@ -1,5 +1,5 @@
 <template>
-  <header class="container1">
+  <header class="nav-container1">
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <a class="navbar-item" href="/main">
@@ -78,3 +78,12 @@ export default {
   },
 };
 </script>
+<style>
+  .nav-container1 {
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Adjust the z-index value as needed */
+  background-color: #fff; /* Set the background color of the navigation bar */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a shadow for better visibility */
+}
+</style>
