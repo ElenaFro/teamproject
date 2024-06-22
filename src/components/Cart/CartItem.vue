@@ -1,11 +1,12 @@
 <template>
   <div class="cart_item columns">
     <div class="cart_item_plant column is-one-third">
-      <img
+      <!-- <img
       class="cart_item__image mr-6"
       :src="'../../src/assets/plantsImages/' + cart_item_data.image"
       alt="Растение"
-      />
+      /> -->
+      <img class="cart_item__image mr-6" :src="`/src/assets/plantsImages/${cart_item_data.image}`" alt="Растение" />
       <a class="cart_item_data__name has-text-success">{{ cart_item_data.name }}</a>
     </div>
 
