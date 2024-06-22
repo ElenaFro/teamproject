@@ -141,3 +141,20 @@ npm run dev
 ```
 
 ###### Заходим в компонент GetPlants (черно-желтая кнопочка на стартовой странице)
+
+
+###### Использовала плагин для того, чтобы корзина не обнулялась при переходе на другие страницы. Это в ветке elena.
+###### установка
+
+npm install vuex-persistedstate
+
+
+###### применение
+
+import { createStore } from 'vuex'
+import createPersistedState from 'vuex-persistedstate'
+
+export default createStore({
+  // ...
+  plugins: [createPersistedState()],
+})

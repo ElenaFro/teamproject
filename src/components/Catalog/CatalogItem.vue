@@ -1,21 +1,20 @@
 <template>
   <div class="catalog-items">
     <div class="catalog-item">
-      <img
-        class="catalog-item__image mx-3"
-        :src="'../../src/assets/plantsImages/' + plant_data.image"
-        alt="Растение"
-      />
-      <p class="catalog-item__sale" v-if="!plant_data.sale">New</p>
-      <p class="catalog-item__sale has-text-danger" v-if="plant_data.sale">Sale</p>
-      <p class="catalog-item__name">{{ plant_data.name }}</p>
-      <p class="catalog-item__about">{{ plant_data.about }}</p>
-      <p class="catalog-item__price">{{ plant_data.price + "₽" }}</p>
+      <div  class="catalog-item-item" @click="goToPlantPage(plant_data.vcode)">
+        <img class="catalog-item__image mx-3" :src="'../../src/assets/plantsImages/' + plant_data.image" alt="Растение" />
+        <p class="catalog-item__sale" v-if="!plant_data.sale">New</p>
+        <p class="catalog-item__sale has-text-danger" v-if="plant_data.sale">Sale</p>
+        <p class="catalog-item__name">{{ plant_data.name }}</p>
+        <p class="catalog-item__about">{{ plant_data.about }}</p>
+        <p class="catalog-item__price">{{ plant_data.price + "₽" }}</p>
+      </div>
       <button class="button is-success catalog-item__add_to_cart_btn btn" @click="addToCart">
         В корзину
       </button>
     </div>
   </div>
+
 </template>
 
 <script>
@@ -35,7 +34,11 @@ export default {
   methods: {
     addToCart() {
       this.$emit("addToCart", this.plant_data);
-      },
+     },
+     goToPlantPage(plantId) {
+      this.$router.push({ name: 'plantPage', params: { id: plantId } });
+      console.log(plantId)
+    } 
   },
 };
 </script>
@@ -58,6 +61,11 @@ export default {
   border-radius: 10px;
   border: 1px solid rgb(216, 216, 216);
   box-shadow: 2px 2px 8px 0 rgb(208, 218, 218);
+}
+.catalog-item-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .catalog-item__image {
   width: 250px;

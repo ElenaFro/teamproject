@@ -35,6 +35,7 @@ export default createStore({
         state.cart.push({ ...plant, quantity: 1 });
       }
     },
+
     REMOVE_FROM_CART: (state, index) => {
       state.cart.splice(index, 1);
     },

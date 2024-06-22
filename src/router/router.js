@@ -7,6 +7,7 @@ import CatalogPage from "/src/components/Catalog/CatalogPage.vue";
 import Cart from "/src/components/Cart/Cart.vue";
 import NotFoundPage from "/src/components/notFoundPage.vue";
 import GetPlants from "/src/components/GetPlants.vue";
+import PlantPage from "/src/components/Catalog/PlantPage.vue";
 
 let wasUserAuth = false;
 
@@ -65,6 +66,11 @@ const routes = [
     path: "/:pathMatch(.*)*",
     name: "notFoundPage",
     component: NotFoundPage,
+  },
+  {
+    path: '/plant/:id',
+    name: 'plantPage',
+    component: PlantPage,
   },
 ];
 
