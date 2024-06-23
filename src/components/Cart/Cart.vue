@@ -1,25 +1,31 @@
 <template>
   <div class="cart">
-    <MailHeader />
-    <Navigation :cart_data="CART" />
-    <p class="title has-text-success-25 is-4 is-italic ml-5 bt-6 mt-6">Корзина</p>
-    <CartItem
+    <div>
+      <MailHeader />
+      <Navigation :cart_data="CART" />
+      <p class="title has-text-success-25 is-4 is-italic ml-5 bt-6 mt-6">Корзина</p>
+    </div>
+    
+    <div class="cart-height">
+      <CartItem
       v-for="(item, index) in CART"
       :key="item.vcode"
       :cart_item_data="item"
       @deleteFromCart="deleteFromCart(index)"
       @increaseQuantity="increaseItemQuantity(index)"
       @decreaseQuantity="decreaseItemQuantity(index)"
-    />
-    <div class="columns is-centered">
-      <div class="ml-6 mb-6 column is-narrow is-offset-8" v-if="totalCost !== 0">
-        <p class="ml-2 my-3">Стоимость: {{ totalCost }} руб.</p>
-        <button class="button is-success">Оформить заказ</button>
+      />
+      <div class="columns is-centered">
+        <div class="ml-6 mb-6 column is-narrow is-offset-8" v-if="totalCost !== 0">
+          <p class="ml-2 my-3">Стоимость: {{ totalCost }} руб.</p>
+          <button class="button is-success">Оформить заказ</button>
+        </div>
       </div>
     </div>
+    
     <FooterPart />
   </div>
-</template>
+</template>   
 
 <script>
 import MailHeader from "../MailHeader.vue";
@@ -70,3 +76,13 @@ export default {
   },
 };
 </script>
+<style>
+  .cart{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Установка минимальной высоты страницы */
+  }
+  .cart-height {
+    flex-grow: 1; /* Занимать доступное пространство */
+  }
+</style>

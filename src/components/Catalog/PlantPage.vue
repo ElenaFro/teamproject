@@ -2,7 +2,7 @@
     <div class="plants-page">
         <Navigation :cart_data="CART" />
         <div class="plant-page columns">
-            <img class="plant-page__image mx-3 column" :src="'../../src/assets/plantsImages/' + plant.image"
+            <img class="plant-page__image mx-4 column" :src="'../../src/assets/plantsImages/' + plant.image"
                 alt="Растение" />
             <div class="column">
                 <p class="plant-page__sale" v-if="!plant.sale">New</p>
@@ -67,21 +67,19 @@ export default {
 <style>
 .plant-page {
     display: flex;
-    height: 70%;
     flex-direction: row;
     align-items: center;
-    margin: 20px;
+    margin: 0px;
+    margin-top: 15px;
     padding-left: 50px;
     padding-right: 50px;
-    padding-top: 20px;
-    padding-bottom: 20px;
     border-radius: 10px;
     border: 1px solid rgb(216, 216, 216);
     box-shadow: 2px 2px 8px 0 rgb(208, 218, 218);
 }
 
 .plant-page__image {
-    width: 500px;
+    width: 400px;
 }
 
 .plant-page__name {
@@ -113,9 +111,4 @@ export default {
     background-color: rgb(1, 87, 87);
 }
 
-/* .plant-page__sale {
-      position: absolute;
-      top: 300px;
-      left: 600px;
-    } */
 </style>

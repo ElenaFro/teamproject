@@ -30,7 +30,7 @@
       <figure class="image is-200x200 mx-auto mb-6 mt-6">
         <img :src="logoStart" alt="Мир растений" />
       </figure>
-      <h2 class="mb-4 is-size-4 mt-6">Попасть на сайт</h2>
+      <h2 class="mb-4 is-size-4 mt-6">Вход</h2>
       <div class="field">
         <label class="label" for="email">Электронная почта</label>
         <div class="control">
@@ -61,13 +61,13 @@
       <button class="button is-success mb-4 mr-3 mt-4" @click="login">
         Войти
       </button>
-      <button class="button is-success is-outlined mt-4" @click="signUp">
+      <button class="button is-success is-outlined mt-4" @click="GoTosignUp">
         Зарегистрироваться
       </button>
       <br>
-      <button class="button is-success is-outlined mt-4" id="temp-button" @click="goToPlants">
+      <!-- <button class="button is-success is-outlined mt-4" id="temp-button" @click="goToPlants">
         Проверить склад товаров
-      </button>
+      </button> -->
     </form>
   </div>
 </template>
@@ -111,23 +111,12 @@ export default {
         this.$router.replace("/main");
       }
     },
-    signUp() {
-      if (this.email === "" && this.pass === "") {
-        alert("Введите почту и пароль");
-      } else if (this.email === "") {
-        alert("Введите почту");
-      } else if (this.pass === "") {
-        alert("Введите пароль");
-      } else if (isUserAuth(this.email, this.pass)) {
-        alert("Вы уже зарегистрированы. Добро пожаловать!");
-        this.$router.replace("/main");
-      } else {
-        alert("Поздравляем с регистрацией! Теперь можете войти");
-      }
+    GoTosignUp() {
+      this.$router.replace("/registr");
     },
-    goToPlants() {
-      this.$router.replace("/get-plants");
-    }
+    // goToPlants() {
+    //   this.$router.replace("/get-plants");
+    // }
   },
 };
 </script>

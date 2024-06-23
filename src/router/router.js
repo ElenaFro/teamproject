@@ -8,6 +8,7 @@ import Cart from "/src/components/Cart/Cart.vue";
 import NotFoundPage from "/src/components/notFoundPage.vue";
 import GetPlants from "/src/components/GetPlants.vue";
 import PlantPage from "/src/components/Catalog/PlantPage.vue";
+import RegistrPage from "/src/components/RegistrPage.vue";
 
 let wasUserAuth = false;
 
@@ -72,6 +73,11 @@ const routes = [
     name: 'plantPage',
     component: PlantPage,
   },
+  {
+    path: '/registr',
+    name: 'registr',
+    component: RegistrPage,
+  }
 ];
 
 const router = createRouter({
