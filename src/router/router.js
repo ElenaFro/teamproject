@@ -9,6 +9,7 @@ import NotFoundPage from "/src/components/notFoundPage.vue";
 import GetPlants from "/src/components/GetPlants.vue";
 import PlantPage from "/src/components/Catalog/PlantPage.vue";
 import RegistrPage from "/src/components/RegistrPage.vue";
+import Person from "/src/components/PersonalАссount/Person.vue";
 
 let wasUserAuth = false;
 
@@ -77,7 +78,12 @@ const routes = [
     path: '/registr',
     name: 'registr',
     component: RegistrPage,
-  }
+  },
+  {
+    path: '/person',
+    name: 'person',
+    component: Person,
+  },
 ];
 
 const router = createRouter({

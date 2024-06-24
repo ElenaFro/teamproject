@@ -1,10 +1,10 @@
 <template>
-  <div class="main">
+  <div class="about-main">
     <MailHeader />
     <Navigation />
-    <div class="about-container">
-      <div class="main-content">
-        <p class="title has-text-success-25 is-4 is-italic bt-6  ml-5 mt-4">О нашем магазине</p>
+    <div class="about-container mt-4">
+      <div class="about-content">
+        <p class="title has-text-success-25 is-4 is-italic bt-6  ml-5 mt-2">О нашем магазине</p>
         <p class="ml-5">Добро пожаловать в "Зелёный Мир" – ваш онлайн-магазин для всех, кто
           любит растения и хочет принести кусочек природы в свой дом или офис.
           Мы предлагаем широкий выбор качественных растений, цветов и деревьев
@@ -67,17 +67,14 @@ body {
 header {
   color: #fff;
   text-align: center;
-  padding: 1rem;
 }
-.main-content {
+.about-content {
   background-color: #fff;
   padding: 1.5rem;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-.about-container{
 
-}
 h1,
 h2 {
   text-align: center;

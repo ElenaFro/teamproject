@@ -41,7 +41,7 @@
           <a class="navbar-link is-size-7"> Личный кабинет </a>
           <div class="navbar-dropdown">
             <a class="navbar-item is-size-7" href="/buy"> Заказы </a>
-            <a class="navbar-item is-size-7" href="/about-me"> Обо мне </a>
+            <a class="navbar-item is-size-7"  href="/person"> Личные данные </a>
             <a class="navbar-item is-size-7" @click="logout" href="/">
               Выход
             </a>
@@ -72,6 +72,9 @@ export default {
     logout() {
       wasAuth = false;
     },
+    goToPerson(){
+      this.$router.push({ name: 'person' });
+    }
   },
   computed: {
     ...mapGetters(["CART"]),
@@ -85,5 +88,6 @@ export default {
   z-index: 1000; /* Adjust the z-index value as needed */
   background-color: #fff; /* Set the background color of the navigation bar */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a shadow for better visibility */
+  height: 90px;
 }
 </style>

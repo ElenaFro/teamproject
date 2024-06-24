@@ -7,7 +7,7 @@
       alt="Растение"
       /> -->
       <img class="cart_item__image mr-6" :src="`/src/assets/plantsImages/${cart_item_data.image}`" alt="Растение" />
-      <a class="cart_item_data__name has-text-success">{{ cart_item_data.name }}</a>
+      <a class="cart_item_data__name has-text-success is dark">{{ cart_item_data.name }}</a>
     </div>
 
     <div class="cart_item_data__info column">
