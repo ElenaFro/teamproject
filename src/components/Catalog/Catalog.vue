@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="catalog-filters  mt-6 ml-3 mb-5">
+    <div class="catalog-filters  mt-4 ml-3 mb-5">
 
     <div class="select is-small mr-3">
       <select v-model="filterOptions.category1">

@@ -149,12 +149,10 @@ npm run dev
 npm install vuex-persistedstate
 
 
-###### применение
+###### птаблица для пользователей
 
-import { createStore } from 'vuex'
-import createPersistedState from 'vuex-persistedstate'
-
-export default createStore({
-  // ...
-  plugins: [createPersistedState()],
-})
+CREATE TABLE users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  email VARCHAR(255),
+  password VARCHAR(255)
+);

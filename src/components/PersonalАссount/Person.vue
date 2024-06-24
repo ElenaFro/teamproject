@@ -48,7 +48,7 @@ export default {
         default() {
           return {
             name: 'Иван Иванов',
-            email: '1t@1t',
+            email: '1t@1t.test',
             address: 'Москва, ул. Ленина, д. 1',
             image: 'person1.jpg'
           };

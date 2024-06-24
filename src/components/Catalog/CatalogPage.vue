@@ -1,5 +1,5 @@
 <template>
-  <div class="main">
+  <div class="main-catalog">
     <MailHeader />
     <Navigation :cart_data="CART" />
     <nav class="breadcrumb has-succeeds-separator ml-3  mt-3 is-small" aria-label="breadcrumbs">
@@ -8,8 +8,10 @@
         <li class="is-active"><a href="/catalog" aria-current="page">Каталог</a></li>
       </ul>
     </nav>
-  
-    <Catalog />
+    <div class="content-catalog">
+      <Catalog />
+    </div>
+    
     <FooterPart />
   </div>
 </template>
@@ -40,5 +42,13 @@ export default {
 <style scoped>
 li {
   color: #000;
+}
+.main-catalog{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Установка минимальной высоты страницы */
+}
+.content-catalog{
+  flex: 1; /* Занимаем все доступное пространство */
 }
 </style>
