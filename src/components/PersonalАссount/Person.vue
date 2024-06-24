@@ -2,8 +2,9 @@
   <div class="person_item">
     <Navigation :cart_data="CART" />
       <div class="columns is-align-items-center is-justify-content-center has-background-success-80 mt-3 mx-0 px-3">
-          <figure class="image is-64x64 column">
-            <img class="is-rounded" :src="`/src/assets/personsImages/${person.image}`" alt="Аватар" />
+          <figure class="image column  ml-2 is-1">
+            <!-- <img class="is-rounded" :src="`/src/assets/personsImages/${person.image}`" alt="Аватар" /> -->
+            <img class="image-person is-rounded" :src="`../../src/assets/personsImages/person1.png`" alt="Аватар" />
           </figure>
           <div class="column">
             <p class="person__name has-text-primary-15 has-text-weight-semibold column">{{ person.name }}</p>
@@ -69,5 +70,8 @@ export default {
   }
   .person-content {
     flex-grow: 1; /* Занимать доступное пространство */
+  }
+  .image-person {
+    height: 100px;
   }
 </style>
