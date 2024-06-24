@@ -41,6 +41,23 @@ app.get('/plants', (req, res) => {
   });
 });
 
+// Обработчик маршрута для регистрации пользователя
+app.post('/register', (req, res) => {
+  const { email, password } = req.body;
+  if (!email || !password) {
+      return res.status(400).json({ error: 'Не указан email или пароль' });
+  }
+  
+  db.query('INSERT INTO users (email, password) VALUES (?, ?)', [email, password], (err, result) => {
+      if (err) {
+          console.error('Ошибка при добавлении пользователя:', err);
+          return res.status(500).json({ error: 'Ошибка при добавлении пользователя' });
+      }
+      
+      res.status(201).json({ message: 'Пользователь успешно зарегистрирован' });
+  });
+});
+
 app.listen(port, () => {
   console.log(`Сервер запущен на порту ${port}`);
 });

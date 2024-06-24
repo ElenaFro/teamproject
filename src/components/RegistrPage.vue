@@ -89,21 +89,48 @@
         this.$router.replace("/");
       },
       signUp() {
-        if (this.email === "" && this.pass === "") {
-          alert("Введите почту и пароль");
-        } else if (this.email === "") {
-          alert("Введите почту");
-        } else if (this.pass === "") {
-          alert("Введите пароль");
-        } else if (isUserAuth(this.email, this.pass)) {
-          alert("Вы уже зарегистрированы. Добро пожаловать!");
-          this.$router.replace("/main");
-        } else {
-          alert("Поздравляем с регистрацией! Теперь можете войти");
-          this.$router.replace("/")
-          // добавить пользователя в базу
-        }
-      },
+    if (this.email === "" || this.pass === "") {
+        alert("Введите почту и пароль");
+    } else {
+        fetch('http://localhost:3000/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email: this.email, password: this.pass }),
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Ошибка при регистрации');
+            }
+            return response.json();
+        })
+        .then(data => {
+            alert(data.message);
+            this.$router.replace("/");
+        })
+        .catch(error => {
+            console.error('Ошибка:', error);
+            alert('Произошла ошибка при регистрации');
+        });
+    }
+},
+      // signUp() {
+      //   if (this.email === "" && this.pass === "") {
+      //     alert("Введите почту и пароль");
+      //   } else if (this.email === "") {
+      //     alert("Введите почту");
+      //   } else if (this.pass === "") {
+      //     alert("Введите пароль");
+      //   } else if (isUserAuth(this.email, this.pass)) {
+      //     alert("Вы уже зарегистрированы. Добро пожаловать!");
+      //     this.$router.replace("/main");
+      //   } else {
+      //     alert("Поздравляем с регистрацией! Теперь можете войти");
+      //     this.$router.replace("/")
+      //     // добавить пользователя в базу
+      //   }
+      // },
       // goToPlants() {
       //   this.$router.replace("/get-plants");
       // }
