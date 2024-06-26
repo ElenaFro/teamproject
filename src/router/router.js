@@ -13,9 +13,36 @@ import Person from "/src/components/PersonalАссount/Person.vue";
 
 let wasUserAuth = false;
 
+// export function isUserAuth(email, pass) {
+//   wasUserAuth = email === "1t@1t.ru" && pass === "1t";
+//   return wasUserAuth;
+// }
+
 export function isUserAuth(email, pass) {
-  wasUserAuth = email === "1t@1t.ru" && pass === "1t";
-  return wasUserAuth;
+  fetch('http://localhost:3000/login', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ email: email, password: pass }),
+  })
+  .then(response => {
+      if (!response.ok) {
+          throw new Error('Ошибка при входе');
+      }
+      return response.json();
+  })
+  .then(data => {
+      if (data.authenticated) {
+          return true;
+      } else {
+          return false;
+      }
+  })
+  // .catch(error => {
+  //     console.error('Ошибка:', error);
+  //     return false;
+  // });
 }
 
 const authGuard = (to, from, next) => {

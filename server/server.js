@@ -29,6 +29,23 @@ db.connect(err => {
   console.log('Подключение к базе данных успешно установлено.');
 });
 
+// Обработчик маршрута для входа пользователя
+app.post('/login', (req, res) => {
+  const { email, password } = req.body;
+  db.query('SELECT * FROM users WHERE email = ? AND password = ?', [email, password], (err, results) => {
+    if (err) {
+      console.error('Ошибка выполнения запроса:', err);
+      res.status(500).send('Ошибка выполнения запроса');
+      return;
+    }
+    if (results.length > 0) {
+      res.json({ authenticated: true });
+    } else {
+      res.json({ authenticated: false });
+    }
+  });
+});
+
 // Пример маршрута для получения списка растений
 app.get('/plants', (req, res) => {
   db.query('SELECT * FROM plants', (err, results) => {
