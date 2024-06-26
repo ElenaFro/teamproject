@@ -99,6 +99,7 @@ export default {
         alert("Введите пароль");
       } else if (!isUserAuth(this.email, this.pass)) {
         alert("Такой почты не существует или пароль не подходит");
+        console.log(isUserAuth(this.email, this.pass),this.email, this.pass);
       }
     },
     recoverPassword() {

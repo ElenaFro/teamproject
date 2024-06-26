@@ -30,7 +30,7 @@ db.connect(err => {
 });
 
 // Обработчик маршрута для входа пользователя
-app.post('/login', (req, res) => {
+app.post('/users', (req, res) => {
   const { email, password } = req.body;
   db.query('SELECT * FROM users WHERE email = ? AND password = ?', [email, password], (err, results) => {
     if (err) {
@@ -40,11 +40,14 @@ app.post('/login', (req, res) => {
     }
     if (results.length > 0) {
       res.json({ authenticated: true });
+      console.log(results);
     } else {
       res.json({ authenticated: false });
     }
   });
 });
+
+
 
 // Пример маршрута для получения списка растений
 app.get('/plants', (req, res) => {
