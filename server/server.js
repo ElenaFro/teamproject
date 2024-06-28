@@ -30,17 +30,49 @@ db.connect(err => {
 });
 
 // Обработчик маршрута для входа пользователя
+// app.post('/users', (req, res) => {
+//   const { email, password } = req.body;
+//   db.query('SELECT * FROM users WHERE email = ? AND password = ?', [email, password], (err, results) => {
+//     if (err) {
+//       console.error('Ошибка выполнения запроса:', err);
+//       res.status(500).send('Ошибка выполнения запроса');
+//       return;
+//     }
+//     if (results.length > 0) {
+//       res.json({ authenticated: true });
+//       console.log(results);
+//     } else {
+//       res.json({ authenticated: false });
+//     }
+//   });
+// });
+// app.post('/users', (req, res) => {
+//   const { email, password } = req.body;
+//   db.query('SELECT * FROM users WHERE email = ? AND password = ?', [email, password], (err, results) => {
+//     if (err) {
+//       console.error('Ошибка выполнения запроса:', err);
+//       res.status(500).send('Ошибка выполнения запроса');
+//       return;
+//     }
+//     if (results.length > 0) {
+//       res.json({ authenticated: true, user: results[0] });
+//     } else {
+//       res.json({ authenticated: false });
+//     }
+//   });
+// });
 app.post('/users', (req, res) => {
   const { email, password } = req.body;
-  db.query('SELECT * FROM users WHERE email = ? AND password = ?', [email, password], (err, results) => {
+  // Check if the user exists in the database
+  db.query('SELECT * FROM users WHERE email = ?', [email], (err, results) => {
     if (err) {
       console.error('Ошибка выполнения запроса:', err);
       res.status(500).send('Ошибка выполнения запроса');
       return;
     }
-    if (results.length > 0) {
+    // If the user exists, check if the password is correct
+    if (results.length > 0 && results[0].password === password) {
       res.json({ authenticated: true });
-      console.log(results);
     } else {
       res.json({ authenticated: false });
     }

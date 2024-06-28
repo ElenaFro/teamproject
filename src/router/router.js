@@ -45,34 +45,95 @@ import Person from "/src/components/PersonalАссount/Person.vue";
 //   // });
 // }
 
+// export function isUserAuth(email, pass) {
+//   return fetch('http://localhost:3000/users', {
+//     method: 'POST',
+//     headers: {
+//         'Content-Type': 'application/json',
+//     },
+//     body: JSON.stringify({ email: email, password: pass }),
+//   })
+//   .then(response => {
+//       if (!response.ok) {
+//           throw new Error('Ошибка при входе');
+//       }
+//       return response.json();
+//   })
+//   // .then(data => {
+//   //     return data.authenticated;
+//   .then(data => {
+//     if (data.authenticated) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+//   })
+//   .catch(error => {
+//       console.error('Ошибка:', error);
+//       return false;
+//   });
+// }
+
+
+// export function isUserAuth(email, pass) {
+//   return fetch('http://localhost:3000/users', {
+//     method: 'POST',
+//     headers: {
+//         'Content-Type': 'application/json',
+//     },
+//     body: JSON.stringify({ email: email, password: pass }),
+//   })
+//   .then(response => {
+//       if (!response.ok) {
+//           throw new Error('Ошибка при входе');
+//       }
+//       return response.json();
+//   })
+//   .then(data => {
+//     if (data.authenticated) {
+//         return data.user;
+//     } else {
+//         return false;
+//     }
+//   })
+//   .catch(error => {
+//       console.error('Ошибка:', error);
+//       return false;
+//   });
+// }
+
 export function isUserAuth(email, pass) {
   return fetch('http://localhost:3000/users', {
     method: 'POST',
     headers: {
-        'Content-Type': 'application/json',
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify({ email: email, password: pass }),
   })
   .then(response => {
-      if (!response.ok) {
-          throw new Error('Ошибка при входе');
+    if (!response.ok) {
+      if (response.status === 404) {
+        // console.log(isUserAuth(email, pass));
+        // Handle the case where the server returns a 404 Not Found error
+        throw new Error('Ошибка при входе: сервер не может найти конечную точку /users');
+        
+      } else {
+        // Handle other errors
+        throw new Error('Ошибка при входе');
       }
-      return response.json();
+    }
+    return response.json();
   })
-  // .then(data => {
-  //     return data.authenticated;
   .then(data => {
     if (data.authenticated) {
-        return true;
+      return data.user;
     } else {
-        return false;
+      return false;
     }
   })
-
- 
   .catch(error => {
-      console.error('Ошибка:', error);
-      return false;
+    console.error('Ошибка:', error);
+    return false;
   });
 }
 
