@@ -65,9 +65,6 @@
         Зарегистрироваться
       </button>
       <br>
-      <!-- <button class="button is-success is-outlined mt-4" id="temp-button" @click="goToPlants">
-        Проверить склад товаров
-      </button> -->
     </form>
   </div>
 </template>
@@ -86,20 +83,27 @@ export default {
     };
   },
   methods: {
-    login() {
-      if (isUserAuth(this.email, this.pass)) {
-        this.$router.replace("/main");
-      } else if (this.email === "") {
-        if (this.pass === "") {
-          alert("Введите почту и пароль");
+    async login() {
+      try {
+        const authResult = await isUserAuth(this.email, this.pass);
+        if (authResult && authResult.authenticated) {
+          // localStorage.setItem('isAuthenticated', true); // Сохраняем информацию об аутентификации
+          this.$router.replace("/main");
         } else {
-          alert("Введите почту");
+          if (this.email === "") {
+            if (this.pass === "") {
+              alert("Введите почту и пароль");
+            } else {
+              alert("Введите почту");
+            }
+          } else if (this.pass === "") {
+            alert("Введите пароль");
+          } else {
+            alert("Такой почты не существует или пароль не подходит");
+          }
         }
-      } else if (this.pass === "") {
-        alert("Введите пароль");
-      } else if (!isUserAuth(this.email, this.pass)) {
-        alert("Такой почты не существует или пароль не подходит");
-        console.log(isUserAuth(this.email, this.pass),this.email, this.pass);
+      } catch (error) {
+        console.error('Ошибка:', error);
       }
     },
     recoverPassword() {
@@ -115,9 +119,6 @@ export default {
     GoTosignUp() {
       this.$router.replace("/registr");
     },
-    // goToPlants() {
-    //   this.$router.replace("/get-plants");
-    // }
   },
 };
 </script>

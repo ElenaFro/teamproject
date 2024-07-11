@@ -29,49 +29,30 @@ db.connect(err => {
   console.log('Подключение к базе данных успешно установлено.');
 });
 
+
+// Обработчик маршрута для получения данных всех пользователей
+app.get('/users', (req, res) => {
+  db.query('SELECT * FROM users', (err, results) => {
+      if (err) {
+          console.error('Ошибка выполнения запроса:', err);
+          res.status(500).send('Ошибка выполнения запроса');
+          return;
+      }
+      res.json(results);
+  });
+});
+
 // Обработчик маршрута для входа пользователя
-// app.post('/users', (req, res) => {
-//   const { email, password } = req.body;
-//   db.query('SELECT * FROM users WHERE email = ? AND password = ?', [email, password], (err, results) => {
-//     if (err) {
-//       console.error('Ошибка выполнения запроса:', err);
-//       res.status(500).send('Ошибка выполнения запроса');
-//       return;
-//     }
-//     if (results.length > 0) {
-//       res.json({ authenticated: true });
-//       console.log(results);
-//     } else {
-//       res.json({ authenticated: false });
-//     }
-//   });
-// });
-// app.post('/users', (req, res) => {
-//   const { email, password } = req.body;
-//   db.query('SELECT * FROM users WHERE email = ? AND password = ?', [email, password], (err, results) => {
-//     if (err) {
-//       console.error('Ошибка выполнения запроса:', err);
-//       res.status(500).send('Ошибка выполнения запроса');
-//       return;
-//     }
-//     if (results.length > 0) {
-//       res.json({ authenticated: true, user: results[0] });
-//     } else {
-//       res.json({ authenticated: false });
-//     }
-//   });
-// });
+
 app.post('/users', (req, res) => {
   const { email, password } = req.body;
-  // Check if the user exists in the database
-  db.query('SELECT * FROM users WHERE email = ?', [email], (err, results) => {
+  db.query('SELECT * FROM users WHERE email = ? AND password = ?', [email, password], (err, results) => {
     if (err) {
       console.error('Ошибка выполнения запроса:', err);
       res.status(500).send('Ошибка выполнения запроса');
       return;
     }
-    // If the user exists, check if the password is correct
-    if (results.length > 0 && results[0].password === password) {
+    if (results.length > 0) {
       res.json({ authenticated: true });
     } else {
       res.json({ authenticated: false });
@@ -79,9 +60,7 @@ app.post('/users', (req, res) => {
   });
 });
 
-
-
-// Пример маршрута для получения списка растений
+// маршрут для получения списка растений
 app.get('/plants', (req, res) => {
   db.query('SELECT * FROM plants', (err, results) => {
     if (err) {

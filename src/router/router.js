@@ -11,97 +11,40 @@ import PlantPage from "/src/components/Catalog/PlantPage.vue";
 import RegistrPage from "/src/components/RegistrPage.vue";
 import Person from "/src/components/PersonalАссount/Person.vue";
 
-// let wasUserAuth = false;
-
 // export function isUserAuth(email, pass) {
-//   wasUserAuth = email === "1t@1t.ru" && pass === "1t";
-//   return wasUserAuth;
-// }
-
-// export function isUserAuth(email, pass) {
-//   fetch('http://localhost:3000/login', {
+//   return fetch('http://localhost:3000/users', {
 //     method: 'POST',
 //     headers: {
-//         'Content-Type': 'application/json',
+//       'Content-Type': 'application/json',
 //     },
 //     body: JSON.stringify({ email: email, password: pass }),
 //   })
 //   .then(response => {
-//       if (!response.ok) {
-//           throw new Error('Ошибка при входе');
-//       }
-//       return response.json();
-//   })
-//   .then(data => {
-//       if (data.authenticated) {
-//           return true;
+//     if (!response.ok) {
+//       if (response.status === 404) {
+//         // console.log(isUserAuth(email, pass));
+//         // Handle the case where the server returns a 404 Not Found error
+//         throw new Error('Ошибка при входе: сервер не может найти конечную точку /users');
+        
 //       } else {
-//           return false;
+//         // Handle other errors
+//         throw new Error('Ошибка при входе');
 //       }
-//   })
-//   // .catch(error => {
-//   //     console.error('Ошибка:', error);
-//   //     return false;
-//   // });
-// }
-
-// export function isUserAuth(email, pass) {
-//   return fetch('http://localhost:3000/users', {
-//     method: 'POST',
-//     headers: {
-//         'Content-Type': 'application/json',
-//     },
-//     body: JSON.stringify({ email: email, password: pass }),
-//   })
-//   .then(response => {
-//       if (!response.ok) {
-//           throw new Error('Ошибка при входе');
-//       }
-//       return response.json();
-//   })
-//   // .then(data => {
-//   //     return data.authenticated;
-//   .then(data => {
-//     if (data.authenticated) {
-//         return true;
-//     } else {
-//         return false;
 //     }
-//   })
-//   .catch(error => {
-//       console.error('Ошибка:', error);
-//       return false;
-//   });
-// }
-
-
-// export function isUserAuth(email, pass) {
-//   return fetch('http://localhost:3000/users', {
-//     method: 'POST',
-//     headers: {
-//         'Content-Type': 'application/json',
-//     },
-//     body: JSON.stringify({ email: email, password: pass }),
-//   })
-//   .then(response => {
-//       if (!response.ok) {
-//           throw new Error('Ошибка при входе');
-//       }
-//       return response.json();
+//     return response.json();
 //   })
 //   .then(data => {
 //     if (data.authenticated) {
-//         return data.user;
+//       return data.user;
 //     } else {
-//         return false;
+//       return false;
 //     }
 //   })
 //   .catch(error => {
-//       console.error('Ошибка:', error);
-//       return false;
+//     console.error('Ошибка:', error);
+//     return false;
 //   });
 // }
-
 export function isUserAuth(email, pass) {
   return fetch('http://localhost:3000/users', {
     method: 'POST',
@@ -113,37 +56,22 @@ export function isUserAuth(email, pass) {
   .then(response => {
     if (!response.ok) {
       if (response.status === 404) {
-        // console.log(isUserAuth(email, pass));
-        // Handle the case where the server returns a 404 Not Found error
         throw new Error('Ошибка при входе: сервер не может найти конечную точку /users');
-        
       } else {
-        // Handle other errors
         throw new Error('Ошибка при входе');
       }
     }
     return response.json();
   })
   .then(data => {
-    if (data.authenticated) {
-      return data.user;
-    } else {
-      return false;
-    }
+    console.log(data)
+    return data; // Возвращаем данные аутентификации
   })
   .catch(error => {
     console.error('Ошибка:', error);
     return false;
   });
 }
-
-// const authGuard = (to, from, next) => {
-//   if (wasUserAuth) next();
-//   else {
-//     alert("Извините, но Вы не авторизованы!");
-//     next("/");
-//   }
-// };
 
 const routes = [
   {
@@ -209,5 +137,13 @@ const router = createRouter({
   history: createWebHistory(),
   routes,
 });
+// router.beforeEach((to, from, next) => {
+//   const isAuthenticated = localStorage.getItem('isAuthenticated');
+//   if (to.name !== 'start' && !isAuthenticated) {
+//     next({ name: 'start' }); // Перенаправляем на страницу входа, если пользователь не аутентифицирован
+//   } else {
+//     next();
+//   }
+// });
 
 export default router;
